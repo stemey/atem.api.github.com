@@ -22,8 +22,8 @@
 	<name>Atem - API</name>
 	
 	<scm>
-		<connection>scm:svn:http://svn/ZS2_SinnerSchrader/25-Meta/50-Entwicklung/api/trunk</connection>
-		<developerConnection>scm:svn:http://svn/ZS2_SinnerSchrader/25-Meta/50-Entwicklung/api/trunk</developerConnection>
+		<connection>scm:git:ssh:git@github.com:stemey/atem.api.github.com.git</connection>
+		<developerConnection>scm:git:ssh:git@github.com:stemey/atem.api.github.com.git</developerConnection>
 		<url>http://svn/ZS2_SinnerSchrader/25-Meta/50-Entwicklung/api/trunk</url>
 	</scm>
 

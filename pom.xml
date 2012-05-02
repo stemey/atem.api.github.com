@@ -19,7 +19,7 @@
 	<version>0.0.21</version>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
-	<name>Atem - API</name>
+	<name>Atem - API</name> 
 	
 	<scm>
 		<connection>scm:git:ssh:git@github.com:stemey/atem.api.github.com.git</connection>

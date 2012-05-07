@@ -16,7 +16,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<groupId>org.atemsource</groupId>
 	<artifactId>atem-api</artifactId>
-	<version>0.0.22-SNAPSHOT</version>
+	<version>0.0.21</version>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
 	<name>Atem - API</name> 
@@ -29,9 +29,9 @@
 
 	<distributionManagement>
 		<repository>
-			<id>s2-repository</id>
-			<name>S2 Repository</name>
-			<url>scpexe://maven/home/maven/repository</url>
+			<id>maven central</id>
+			<name>maven central</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 	</distributionManagement>
 

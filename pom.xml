@@ -34,7 +34,14 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 	</distributionManagement>
-
+	<licenses>
+		<license>
+		    <name>Apache 2</name>
+		    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		    <distribution>repo</distribution>
+		    <comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
 	
 	<repositories>
 		<repository>
@@ -149,4 +156,6 @@
 			<version>1.0</version>
 		</dependency>
 	</dependencies>
+	<url>https://github.com/stemey/atem.api.github.com</url>
+	<description>The Atem API provides reflective access to classes. </description>
 </project>

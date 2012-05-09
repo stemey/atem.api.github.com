@@ -1,30 +1,30 @@
-<!--
-  Stefan Meyer, 2012
-  
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<!-- Stefan Meyer, 2012 Licensed under the Apache License, Version 2.0 (the 
+	"License"); you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<groupId>org.atemsource</groupId>
 	<artifactId>atem-api</artifactId>
 	<version>0.0.28-SNAPSHOT</version>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
-	<name>Atem - API</name> 
-	
+	<name>Atem - API</name>
+	<description>The Atem API provides reflective access to classes. </description>
+	<url>https://github.com/stemey/atem.api.github.com</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<pom.siteAddress>ftp://ftp.atemsource.org:21</pom.siteAddress>
+		<pom.siteDirectory>maven/site/api</pom.siteDirectory>
+	</properties>
+
 	<scm>
-		<connection>scm:git:git@github.com:stemey/atem.api.github.com.git</connection>
+		<connection>scm:git://github.com/stemey/atem.api.github.com.git</connection>
 		<developerConnection>scm:git:git@github.com:stemey/atem.api.github.com.git</developerConnection>
-		<url>http://svn/ZS2_SinnerSchrader/25-Meta/50-Entwicklung/api/trunk</url>
+		<url>https://stemey@github.com/stemey/atem.api.github.com.git</url>
 	</scm>
 
 	<distributionManagement>
@@ -36,65 +36,48 @@
 	</distributionManagement>
 	<licenses>
 		<license>
-		    <name>Apache 2</name>
-		    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		    <distribution>repo</distribution>
-		    <comments>A business-friendly OSS license</comments>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
-	
-	<repositories>
-		<repository>
-			<id>sinnerschrader-repository</id>
-			<name>SinnerSchrader-Maven-Repository</name>
-			<url>http://maven</url>
-		</repository>
-		<repository>
-			<id>ops4j</id>
-			<url>http://repository.ops4j.org/maven2/</url>
-		</repository>
-		<repository>
-			<id>jboss-repository</id>
-			<name>The JBoss maven repository</name>
-			<url>http://repository.jboss.org/maven2</url>
-		</repository>
-		<repository>
-			<id>apache.org</id>
-			<name>Maven Snapshots</name>
-			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+
+
 	<build>
-		    <extensions>
-		      <!-- Enabling the use of FTP -->
-		      <extension>
-			<groupId>org.apache.maven.wagon</groupId>
-			 <artifactId>wagon-ssh-external</artifactId>
-			 <version>1.0-beta-7</version>
-		      </extension>
-		    </extensions>
+		<extensions>
+			<!-- Enabling the use of FTP -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>1.0-beta-7</version>
+			</extension>
+		</extensions>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
-		      <plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-gpg-plugin</artifactId>
-			<executions>
-			  <execution>
-			    <id>sign-artifacts</id>
-			    <phase>verify</phase>
-			    <goals>
-			      <goal>sign</goal>
-			    </goals>
-			  </execution>
-			</executions>
-		      </plugin>			
-		      <plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -122,28 +105,49 @@
 					</delimiters>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.4</version>
+							<configuration>
+								<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+							</configuration>
+							<!-- simpler configuration without reportSets available for usual 
+								cases -->
+							<reports>
+								<report>dependencies</report>
+								<report>scm</report>
+								<report>license</report>
+								<report>index</report>
+							</reports>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8</version>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+
 		</plugins>
-	</build>	
+	</build>
 	<developers>
 		<developer>
-			<id>stefan</id>
+			<id>stemey</id>
 			<name>Stefan Meyer</name>
-			<email>s.meyer@s2neueinformatik.de</email>
+			<email>stefan.meyer@sinnerschrader.com</email>
 			<organization>SinnerSchrader</organization>
 		</developer>
 	</developers>
 	<dependencies>
-		<dependency>
-			<groupId>commons-resources</groupId>
-			<artifactId>commons-resources</artifactId>
-			<version>20041212</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.4</version>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -156,6 +160,6 @@
 			<version>1.0</version>
 		</dependency>
 	</dependencies>
-	<url>https://github.com/stemey/atem.api.github.com</url>
-	<description>The Atem API provides reflective access to classes. </description>
+
+
 </project>

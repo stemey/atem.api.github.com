@@ -1,20 +1,11 @@
 /*******************************************************************************
- * Stefan Meyer, 2012
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Stefan Meyer, 2012 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
  ******************************************************************************/
 package org.atemsource.atem.api.type;
-
 
 import java.util.List;
 import java.util.Set;
@@ -47,14 +38,6 @@ public interface EntityType<J> extends Type<J>
 	public abstract Attribute getAttribute(final String code);
 
 	public List<Attribute> getAttributes();
-
-	/**
-	 * Returns how to cascade staging operations ({@link Object#publish()}, {@link Object#revoke()}) to the parent of
-	 * entities of this type. Defaults to {@link CascadeStagingType#NONE}.
-	 * 
-	 * @return How to cascade staging operations to parents.
-	 */
-	public abstract CascadeStagingType getCascadeStagingToParentType();
 
 	public abstract Class getEntityClass();
 

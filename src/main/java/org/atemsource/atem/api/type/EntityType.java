@@ -10,8 +10,8 @@ package org.atemsource.atem.api.type;
 import java.util.List;
 import java.util.Set;
 
-import org.atemsource.atem.api.TechnicalException;
 import org.atemsource.atem.api.attribute.Attribute;
+import org.atemsource.atem.api.infrastructure.exception.TechnicalException;
 
 
 public interface EntityType<J> extends Type<J>

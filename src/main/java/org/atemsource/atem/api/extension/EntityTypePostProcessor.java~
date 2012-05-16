@@ -18,18 +18,10 @@ package org.atemsource.atem.api.extension;
 import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.spi.EntityTypeCreationContext;
 
-/**
-* When an EntityType is constructed this interface can be used to be notified. Usually one processes  annotations on the EntityType's java class and adds meta data to the ENtityType.
-* @author Stefan Meyer
-*/ 
+
 public interface EntityTypePostProcessor
 {
-/**
-* postprocess the EntityType.
-* @param context gives access to other types while the EntityTypeRepository is initialized
-* @param the EntityType that is fully initialized.
-*
-*/
+
 	void postProcessEntityType(EntityTypeCreationContext context, EntityType<?> entityType);
 
 }

@@ -21,15 +21,9 @@ import org.atemsource.atem.api.attribute.MapAttribute;
 import org.atemsource.atem.api.attribute.primitive.PrimitiveType;
 import org.atemsource.atem.api.attribute.relation.SingleAttribute;
 
-/**
-* This builder allows to define an EntityType at run time. These EntityTypes are called dynamic.
-*
-*
-* @author Stefan Meyer
-*/
+
 public interface EntityTypeBuilder
 {
-
 	public <K, V, R> MapAttribute<K, V, R> addMapAssociationAttribute(String code, Type<K> keyType, Type<V> valueType);
 
 	public <J, R> CollectionAttribute<J, R> addMultiAssociationAttribute(String code, Type<J> targetType,

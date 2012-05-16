@@ -21,19 +21,53 @@ import java.util.Collection;
 import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.api.type.Type;
 
-
+/**
+* The application singleton that provides access to all types.
+*
+*
+* @author Stefan Meyer
+*/
 public interface EntityTypeRepository
 {
+/**
+* Get the EntityType for a class. Returns null if none was found.  
+* @param clazz the class
+* @return the EntityType representing the class
+*/
 	<J> EntityType<J> getEntityType(Class<J> clazz);
 
+/**
+* Get the EntityType for an entity. Returns null if none was found.  
+* @param entity the entity
+* @return the EntityType describing the entity
+*/
 	<J> EntityType<J> getEntityType(J entity);
 
+/**
+* Get the EntityType by its code. Returns null if none was found.  
+* @param typeCode the code/id of the EntityType.
+* @return the EntityType 
+*/
 	<J> EntityType<J> getEntityType(String typeCode);
 
+/**
+* Get all EntityTypes.  
+* @return all EntityTypes 
+*/
 	<J> Collection<EntityType<J>> getEntityTypes();
 
+/**
+* Get the Type for a class. Returns null if none was found.  
+* @param clazz the class
+* @return the Type representing the class
+*/
 	<J> Type<J> getType(Class<J> clazz);
 
-	<J> Type<J> getType(J entity);
+/**
+* Get the Type for an entity. Returns null if none was found.  
+* @param value the value
+* @return the Type describing the value
+*/
+	<J> Type<J> getType(J value);
 
 }

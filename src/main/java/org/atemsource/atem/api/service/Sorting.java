@@ -17,57 +17,103 @@ package org.atemsource.atem.api.service;
 
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Sorting.
+ */
+public class Sorting {
 
-public class Sorting
-{
-	public static class AttributeSorting
-	{
+	/**
+	 * The Class AttributeSorting.
+	 */
+	public static class AttributeSorting {
+
+		/** The code. */
 		private String code;
 
+		/** The filter. */
 		private String filter;
 
+		/** The ascending. */
 		private boolean ascending;
 
-		public String getCode()
-		{
+		/**
+		 * Gets the code.
+		 * 
+		 * @return the code
+		 */
+		public String getCode() {
 			return code;
 		}
 
-		public String getFilter()
-		{
+		/**
+		 * Gets the filter.
+		 * 
+		 * @return the filter
+		 */
+		public String getFilter() {
 			return filter;
 		}
 
-		public boolean isAscending()
-		{
+		/**
+		 * Checks if is ascending.
+		 * 
+		 * @return true, if is ascending
+		 */
+		public boolean isAscending() {
 			return ascending;
 		}
 
-		public void setAscending(final boolean ascending)
-		{
+		/**
+		 * Sets the ascending.
+		 * 
+		 * @param ascending
+		 *            the new ascending
+		 */
+		public void setAscending(final boolean ascending) {
 			this.ascending = ascending;
 		}
 
-		public void setCode(final String code)
-		{
+		/**
+		 * Sets the code.
+		 * 
+		 * @param code
+		 *            the new code
+		 */
+		public void setCode(final String code) {
 			this.code = code;
 		}
 
-		public void setFilter(final String filter)
-		{
+		/**
+		 * Sets the filter.
+		 * 
+		 * @param filter
+		 *            the new filter
+		 */
+		public void setFilter(final String filter) {
 			this.filter = filter;
 		}
 	}
 
+	/** The sortings. */
 	private List<AttributeSorting> sortings;
 
-	public List<AttributeSorting> getSortings()
-	{
+	/**
+	 * Gets the sortings.
+	 * 
+	 * @return the sortings
+	 */
+	public List<AttributeSorting> getSortings() {
 		return sortings;
 	}
 
-	public void setSortings(final List<AttributeSorting> sortings)
-	{
+	/**
+	 * Sets the sortings.
+	 * 
+	 * @param sortings
+	 *            the new sortings
+	 */
+	public void setSortings(final List<AttributeSorting> sortings) {
 		this.sortings = sortings;
 	}
 

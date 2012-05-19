@@ -17,10 +17,21 @@ package org.atemsource.atem.api.infrastructure.meta;
 
 import java.lang.annotation.Annotation;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface InitialzableByAnnotationBean.
+ * 
+ * @param <A>
+ *            the generic type
+ */
+public interface InitialzableByAnnotationBean<A extends Annotation> {
 
-public interface InitialzableByAnnotationBean<A extends Annotation>
-{
-
+	/**
+	 * Initialize.
+	 * 
+	 * @param a
+	 *            the a
+	 */
 	public void initialize(A a);
 
 }

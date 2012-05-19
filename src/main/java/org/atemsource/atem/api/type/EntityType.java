@@ -13,53 +13,134 @@ import java.util.Set;
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.infrastructure.exception.TechnicalException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface EntityType.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface EntityType<J> extends Type<J> {
 
-public interface EntityType<J> extends Type<J>
-{
+	/**
+	 * Creates the array.
+	 * 
+	 * @param length
+	 *            the length
+	 * @return the object[]
+	 */
 	public abstract Object[] createArray(int length);
 
 	/**
-	 * Creates a new entity instance for this type. The entity will not be persisted until you call
-	 * {@link Object#save(boolean)}.
+	 * Creates a new entity instance for this type. The entity will not be
+	 * persisted until you call
 	 * 
 	 * @return The newly created entity.
-	 * @throws TechnicalException A technical problem prevents the operation from completing.
+	 * @throws TechnicalException
+	 *             A technical problem prevents the operation from completing.
+	 *             {@link Object#save(boolean)}.
 	 */
 	public abstract J createEntity() throws TechnicalException;
 
+	/**
+	 * Gets the all sub entity types.
+	 * 
+	 * @return the all sub entity types
+	 */
 	public abstract Set<EntityType> getAllSubEntityTypes();
 
 	/**
 	 * Returns an attributes of this entity type by its code.
 	 * 
-	 * @param code The code of the attribute to be returned.
+	 * @param code
+	 *            The code of the attribute to be returned.
 	 * @return The attribute.
 	 */
-	public abstract Attribute getAttribute(final String code);
+	Attribute getAttribute(final String code);
 
+	/**
+	 * Gets the attributes.
+	 * 
+	 * @return the attributes
+	 */
 	public List<Attribute> getAttributes();
 
+	/**
+	 * Returns an attributes of this entity type by its code.
+	 * 
+	 * @param code
+	 *            The code of the attribute to be returned.
+	 * @return The attribute.
+	 */
+	Attribute getDeclaredAttribute(final String code);
+
+	/**
+	 * Gets the attributes.
+	 * 
+	 * @return the attributes
+	 */
+	public List<Attribute> getDeclaredAttributes();
+
+	/**
+	 * Gets the entity class.
+	 * 
+	 * @return the entity class
+	 */
 	public abstract Class getEntityClass();
 
+	/**
+	 * Gets the incoming association.
+	 * 
+	 * @param sourceTypeCode
+	 *            the source type code
+	 * @return the incoming association
+	 */
 	public Attribute getIncomingAssociation(String sourceTypeCode);
 
-	public Attribute getIncomingAssociation(String sourceTypeCode, String attributeCode);
+	/**
+	 * Gets the incoming association.
+	 * 
+	 * @param sourceTypeCode
+	 *            the source type code
+	 * @param attributeCode
+	 *            the attribute code
+	 * @return the incoming association
+	 */
+	public Attribute getIncomingAssociation(String sourceTypeCode,
+			String attributeCode);
 
+	/**
+	 * Gets the self and all sub entity types.
+	 * 
+	 * @return the self and all sub entity types
+	 */
 	public abstract Set<EntityType<?>> getSelfAndAllSubEntityTypes();
 
+	/**
+	 * Gets the service.
+	 * 
+	 * @param <T>
+	 *            the generic type
+	 * @param serviceInterface
+	 *            the service interface
+	 * @return the service
+	 */
 	public <T> T getService(final Class<T> serviceInterface);
 
 	/**
 	 * Returns all sub types of this type, including ancestors and this type.
 	 * 
-	 * @param includeAbstract Whether to include abstract types, too.
+	 * @param includeAbstract
+	 *            Whether to include abstract types, too.
 	 * @return All sub types of this type, including ancestors and this type.
 	 */
-	public abstract Set<EntityType> getSubEntityTypes(final boolean includeAbstract);
+	public abstract Set<EntityType> getSubEntityTypes(
+			final boolean includeAbstract);
 
 	/**
-	 * Returns the super type, if any. All attributes are inherited from the super type and its super types. If the
-	 * entity type has no super type, this property is <code>null</code>.
+	 * Returns the super type, if any. All attributes are inherited from the
+	 * super type and its super types. If the entity type has no super type,
+	 * this property is <code>null</code>.
 	 * 
 	 * @return The super type or <code>null</code>.
 	 */
@@ -68,23 +149,28 @@ public interface EntityType<J> extends Type<J>
 	/**
 	 * Returns whether this entity type has an attribute with a given code.
 	 * 
-	 * @param code The code of the attribute to be verified.
+	 * @param code
+	 *            The code of the attribute to be verified.
 	 * @return Whether this entity type has such an attribute.
 	 */
 	public abstract boolean hasAttribute(final String code);
 
 	/**
-	 * Returns whether the entity type is abstract, i.e. it cannot be instantiated (only sub types can).
+	 * Returns whether the entity type is abstract, i.e. it cannot be
+	 * instantiated (only sub types can).
 	 * 
 	 * @return Whether the entity type is abstract
 	 */
 	public abstract boolean isAbstractType();
 
 	/**
-	 * Returns whether this entity type is either the same as, or a super type of, the type of a specified entity.
+	 * Returns whether this entity type is either the same as, or a super type
+	 * of, the type of a specified entity.
 	 * 
-	 * @param entity The typed entity to compare to.
-	 * @return Whether this entity type is either the same as, or a super type of, the type of a specified entity.
+	 * @param entity
+	 *            The typed entity to compare to.
+	 * @return Whether this entity type is either the same as, or a super type
+	 *         of, the type of a specified entity.
 	 */
 	public abstract boolean isAssignableFrom(final Object entity);
 

@@ -15,7 +15,14 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface NumberType<J extends Number> extends PrimitiveType<J>
-{
+import org.atemsource.atem.api.type.PrimitiveType;
+
+/**
+ * The Interface NumberType.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface NumberType<J extends Number> extends PrimitiveType<J> {
 
 }

@@ -17,10 +17,27 @@ package org.atemsource.atem.api.attribute;
 
 import org.atemsource.atem.api.attribute.relation.SingleAttribute;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface ValidationMetaData.
+ */
+public interface ValidationMetaData {
 
-public interface ValidationMetaData
-{
+	/**
+	 * Gets the max length.
+	 * 
+	 * @param attribute
+	 *            the attribute
+	 * @return the max length
+	 */
 	public Integer getMaxLength(SingleAttribute<String> attribute);
 
+	/**
+	 * Checks if is required.
+	 * 
+	 * @param attribute
+	 *            the attribute
+	 * @return true, if is required
+	 */
 	public boolean isRequired(Attribute<?, ?> attribute);
 }

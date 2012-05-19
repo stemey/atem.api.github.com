@@ -15,13 +15,21 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface EntityValidationService.
+ */
+public interface EntityValidationService {
 
-public interface EntityValidationService
-{
-
+	/**
+	 * Validate.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @return the list
+	 */
 	List<EntityProblem> validate(Object entity);
 
 }

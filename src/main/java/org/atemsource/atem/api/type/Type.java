@@ -15,37 +15,48 @@
  ******************************************************************************/
 package org.atemsource.atem.api.type;
 
+// TODO: Auto-generated Javadoc
 /**
-* Type represents a java class, a java primitive type or a json schema. 
-*
-* @author Stefan Meyer
-*/
-public interface Type<J>
-{
-/**
-* Get the unique code of he type. 
-* @return the code
-*/
+ * Type represents a java class, a java primitive type or a json schema.
+ * 
+ * @param <J>
+ *            the generic type
+ * @author Stefan Meyer
+ */
+public interface Type<J> {
+	/**
+	 * Get the unique code of he type.
+	 * 
+	 * @return the code
+	 */
 	public String getCode();
-/**
-* Get the java class that this type represents. There may be many types defined on the same java class.
-* @return the java class
-*/
+
+	/**
+	 * Get the java class that this type represents. There may be many types
+	 * defined on the same java class.
+	 * 
+	 * @return the java class
+	 */
 	public Class<J> getJavaType();
 
-/**
-* Check that a type is a subtype of this type.
-* @param type the Type to test
-* @return true type is subclass of this type.
-*/
+	/**
+	 * Check that a type is a subtype of this type.
+	 * 
+	 * @param type
+	 *            the Type to test
+	 * @return true type is subclass of this type.
+	 */
 	public boolean isAssignableFrom(Type<?> type);
 
-/**
-* compare two objects that are instances of this type.
-* @param a value  
-* @param b value
-* @return rue if the values are equal
-*/
+	/**
+	 * compare two objects that are instances of this type.
+	 * 
+	 * @param a
+	 *            value
+	 * @param b
+	 *            value
+	 * @return rue if the values are equal
+	 */
 	public boolean isEqual(J a, J b);
 
 }

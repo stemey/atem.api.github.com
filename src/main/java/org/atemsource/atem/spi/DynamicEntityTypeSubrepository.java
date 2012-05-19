@@ -17,10 +17,22 @@ package org.atemsource.atem.spi;
 
 import org.atemsource.atem.api.type.EntityTypeBuilder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface DynamicEntityTypeSubrepository.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface DynamicEntityTypeSubrepository<J> extends
+		EntityTypeSubrepository<J> {
 
-
-
-public interface DynamicEntityTypeSubrepository<J> extends EntityTypeSubrepository<J>
-{
+	/**
+	 * Creates the builder.
+	 * 
+	 * @param code
+	 *            the code
+	 * @return the entity type builder
+	 */
 	public EntityTypeBuilder createBuilder(String code);
 }

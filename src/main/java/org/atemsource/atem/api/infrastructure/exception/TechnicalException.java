@@ -15,17 +15,32 @@
  ******************************************************************************/
 package org.atemsource.atem.api.infrastructure.exception;
 
-public class TechnicalException extends RuntimeException
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TechnicalException.
+ */
+public class TechnicalException extends RuntimeException {
 
-	public TechnicalException(final String message)
-	{
+	/**
+	 * Instantiates a new technical exception.
+	 * 
+	 * @param message
+	 *            the message
+	 */
+	public TechnicalException(final String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public TechnicalException(final String message, final Throwable cause)
-	{
+	/**
+	 * Instantiates a new technical exception.
+	 * 
+	 * @param message
+	 *            the message
+	 * @param cause
+	 *            the cause
+	 */
+	public TechnicalException(final String message, final Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}

@@ -11,12 +11,15 @@ import java.io.Serializable;
 
 import org.atemsource.atem.api.attribute.Attribute;
 
-
-public class EntityProblem implements Serializable
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EntityProblem.
+ */
+public class EntityProblem implements Serializable {
 	/**
-	 * The attribute that causes the problem, if it is so. Only one of {@link #getAttribute()} and
-	 * {@link #getPropertyName()}, or none of both is set.
+	 * The attribute that causes the problem, if it is so. Only one of
+	 * {@link #getAttribute()} and {@link #getPropertyName()}, or none of both
+	 * is set.
 	 */
 	private Attribute attribute;
 
@@ -31,8 +34,9 @@ public class EntityProblem implements Serializable
 	private String message;
 
 	/**
-	 * The standard property that causes the problem, if it is so. Only one of {@link #getAttribute()} and
-	 * {@link #getPropertyName()}, or none of both is set.
+	 * The standard property that causes the problem, if it is so. Only one of
+	 * {@link #getAttribute()} and {@link #getPropertyName()}, or none of both
+	 * is set.
 	 */
 	private String propertyName;
 
@@ -42,13 +46,13 @@ public class EntityProblem implements Serializable
 	private Type type;
 
 	/**
-	 * Returns the attribute that causes the problem, if it is so. Only one of {@link #getAttribute()} and
-	 * {@link #getPropertyName()}, or none of both is set.
+	 * Returns the attribute that causes the problem, if it is so. Only one of
+	 * {@link #getAttribute()} and
 	 * 
-	 * @return the attribute or <code>null</code>.
+	 * @return the attribute or <code>null</code>. {@link #getPropertyName()},
+	 *         or none of both is set.
 	 */
-	public Attribute getAttribute()
-	{
+	public Attribute getAttribute() {
 		return attribute;
 	}
 
@@ -57,24 +61,27 @@ public class EntityProblem implements Serializable
 	 * 
 	 * @return The entity.
 	 */
-	public Object getEntity()
-	{
+	public Object getEntity() {
 		return entity;
 	}
 
-	public String getMessage()
-	{
+	/**
+	 * Gets the message.
+	 * 
+	 * @return the message
+	 */
+	public String getMessage() {
 		return message;
 	}
 
 	/**
-	 * Returns the standard property that causes the problem, if it is so. Only one of {@link #getAttribute()} and
-	 * {@link #getPropertyName()}, or none of both is set.
+	 * Returns the standard property that causes the problem, if it is so. Only
+	 * one of {@link #getAttribute()} and
 	 * 
 	 * @return The standard property name or <code>null</code>.
+	 *         {@link #getPropertyName()}, or none of both is set.
 	 */
-	public String getPropertyName()
-	{
+	public String getPropertyName() {
 		return propertyName;
 	}
 
@@ -83,57 +90,76 @@ public class EntityProblem implements Serializable
 	 * 
 	 * @return The type of the problem.
 	 */
-	public Type getType()
-	{
+	public Type getType() {
 		return type;
 	}
 
 	/**
-	 * Sets the the attribute that causes the problem, if it is so. Only one of {@link #getAttribute()} and
-	 * {@link #getPropertyName()}, or none of both is set.
+	 * Sets the the attribute that causes the problem, if it is so. Only one of
+	 * {@link #getAttribute()} and
 	 * 
-	 * @param attributeName The attribute or <code>null</code>.
+	 * @param attribute
+	 *            the new attribute {@link #getPropertyName()}, or none of both
+	 *            is set.
 	 */
-	public void setAttribute(final Attribute attribute)
-	{
+	public void setAttribute(final Attribute attribute) {
 		this.attribute = attribute;
 	}
 
 	/**
 	 * Sets the entity that has the problem.
 	 * 
-	 * @param entity The entity.
+	 * @param entity
+	 *            The entity.
 	 */
-	public void setEntity(final Object entity)
-	{
+	public void setEntity(final Object entity) {
 		this.entity = entity;
 	}
 
-	public void setMessage(String message)
-	{
+	/**
+	 * Sets the message.
+	 * 
+	 * @param message
+	 *            the new message
+	 */
+	public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public void setPropertyName(final String propertyName)
-	{
+	/**
+	 * Sets the property name.
+	 * 
+	 * @param propertyName
+	 *            the new property name
+	 */
+	public void setPropertyName(final String propertyName) {
 		this.propertyName = propertyName;
 	}
 
-	public void setType(final Type type)
-	{
+	/**
+	 * Sets the type.
+	 * 
+	 * @param type
+	 *            the new type
+	 */
+	public void setType(final Type type) {
 		this.type = type;
 	}
 
-	public enum Type
-	{
+	/**
+	 * The Enum Type.
+	 */
+	public enum Type {
 		/**
-		 * The attribute value is invalid, so the entity itself is declared invalid. Invalid values can be persisted, but
-		 * they are not offered in the Shop.
+		 * The attribute value is invalid, so the entity itself is declared
+		 * invalid. Invalid values can be persisted, but they are not offered in
+		 * the Shop.
 		 */
 		INVALID,
 
 		/**
-		 * The attribute value is unpersistable, so the entity cannot be saved in this state.
+		 * The attribute value is unpersistable, so the entity cannot be saved
+		 * in this state.
 		 */
 		UNPERSISTABLE;
 	}

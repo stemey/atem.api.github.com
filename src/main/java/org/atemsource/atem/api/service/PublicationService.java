@@ -17,14 +17,36 @@ package org.atemsource.atem.api.service;
 
 import org.atemsource.atem.api.type.EntityType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface PublicationService.
+ */
+public interface PublicationService {
 
-public interface PublicationService
-{
-
+	/**
+	 * Checks if is publication allowed.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @return true, if is publication allowed
+	 */
 	boolean isPublicationAllowed(EntityType<?> entity);
 
+	/**
+	 * Publish.
+	 * 
+	 * @param entity
+	 *            the entity
+	 */
 	void publish(Object entity);
 
+	/**
+	 * Revert.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @return the object
+	 */
 	Object revert(Object entity);
 
 }

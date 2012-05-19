@@ -15,7 +15,9 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface IntegerType extends NumberType<Integer>
-{
+/**
+ * The Interface IntegerType.
+ */
+public interface IntegerType extends NumberType<Integer> {
 
 }

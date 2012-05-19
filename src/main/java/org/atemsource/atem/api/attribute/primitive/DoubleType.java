@@ -15,7 +15,9 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface DoubleType extends NumberType<Double>
-{
+/**
+ * The Interface DoubleType.
+ */
+public interface DoubleType extends NumberType<Double> {
 
 }

@@ -15,7 +15,11 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface BooleanType extends PrimitiveType<Boolean>
-{
+import org.atemsource.atem.api.type.PrimitiveType;
+
+/**
+ * The Interface BooleanType.
+ */
+public interface BooleanType extends PrimitiveType<Boolean> {
 
 }

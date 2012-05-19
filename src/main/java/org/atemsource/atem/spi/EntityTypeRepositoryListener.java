@@ -15,7 +15,25 @@
  ******************************************************************************/
 package org.atemsource.atem.spi;
 
-public interface EntityTypeRepositoryListener
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The listener interface for receiving entityTypeRepository events. The class
+ * that is interested in processing a entityTypeRepository event implements this
+ * interface, and the object created with that class is registered with a
+ * component using the component's
+ * <code>addEntityTypeRepositoryListener<code> method. When
+ * the entityTypeRepository event occurs, that object's appropriate
+ * method is invoked.
+ * 
+ * @see EntityTypeRepositoryEvent
+ */
+public interface EntityTypeRepositoryListener {
+
+	/**
+	 * On event.
+	 * 
+	 * @param event
+	 *            the event
+	 */
 	void onEvent(PhaseEvent event);
 }

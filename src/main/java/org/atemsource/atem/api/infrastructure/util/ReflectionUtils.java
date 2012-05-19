@@ -25,116 +25,148 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ReflectionUtils.
+ */
+public class ReflectionUtils {
 
-public class ReflectionUtils
-{
-
-	private static void addInterfaces(Class genericClass, List<Type> genericClasses, final Type[] genericSuperInterfaces)
-	{
-		for (Type genericSuperInterface : genericSuperInterfaces)
-		{
+	/**
+	 * Adds the interfaces.
+	 * 
+	 * @param genericClass
+	 *            the generic class
+	 * @param genericClasses
+	 *            the generic classes
+	 * @param genericSuperInterfaces
+	 *            the generic super interfaces
+	 */
+	private static void addInterfaces(Class genericClass,
+			List<Type> genericClasses, final Type[] genericSuperInterfaces) {
+		for (Type genericSuperInterface : genericSuperInterfaces) {
 			if (genericSuperInterface instanceof ParameterizedType
-				&& genericClass.isAssignableFrom((Class) ((ParameterizedType) genericSuperInterface).getRawType()))
-			{
+					&& genericClass
+							.isAssignableFrom((Class) ((ParameterizedType) genericSuperInterface)
+									.getRawType())) {
 				genericClasses.add(genericSuperInterface);
 			}
 		}
 	}
 
-	public static int compareByCommonHierachy(Class exceptionType1, Class exceptionType2)
-	{
-		if (exceptionType1 == exceptionType2)
-		{
+	/**
+	 * Compare by common hierachy.
+	 * 
+	 * @param exceptionType1
+	 *            the exception type1
+	 * @param exceptionType2
+	 *            the exception type2
+	 * @return the int
+	 */
+	public static int compareByCommonHierachy(Class exceptionType1,
+			Class exceptionType2) {
+		if (exceptionType1 == exceptionType2) {
 			return 0;
 		}
 		int compare = exceptionType1.isAssignableFrom(exceptionType2) ? 1 : 0;
-		if (compare == 0)
-		{
+		if (compare == 0) {
 			compare = exceptionType2.isAssignableFrom(exceptionType1) ? -1 : 0;
 		}
 		return compare;
 	}
 
+	/**
+	 * Gets the actual type parameter.
+	 * 
+	 * @param implmentingGenericClass
+	 *            the implmenting generic class
+	 * @param genericClass
+	 *            the generic class
+	 * @return the actual type parameter
+	 */
 	@SuppressWarnings("unchecked")
-	public static Class getActualTypeParameter(Class implmentingGenericClass, Class genericClass)
-	{
+	public static Class getActualTypeParameter(Class implmentingGenericClass,
+			Class genericClass) {
 		final TypeVariable[] typeParameters = genericClass.getTypeParameters();
-		if (typeParameters.length != 1)
-		{
-			throw new IllegalArgumentException("Only one type parameter allowed");
+		if (typeParameters.length != 1) {
+			throw new IllegalArgumentException(
+					"Only one type parameter allowed");
 		}
 		return getActualTypeParameters(implmentingGenericClass, genericClass)[0];
 	}
 
+	/**
+	 * Gets the actual type parameters.
+	 * 
+	 * @param implmentingGenericClass
+	 *            the implmenting generic class
+	 * @param genericClass
+	 *            the generic class
+	 * @return the actual type parameters
+	 */
 	@SuppressWarnings("unchecked")
-	public static Class[] getActualTypeParameters(Class implmentingGenericClass, Class genericClass)
-	{
+	public static Class[] getActualTypeParameters(
+			Class implmentingGenericClass, Class genericClass) {
 		List<Class> classes = new ArrayList<Class>();
 		final TypeVariable[] typeParameters = genericClass.getTypeParameters();
 
 		List<Type> genericClasses = new ArrayList<Type>();
 		Class currentClass = implmentingGenericClass;
-		do
-		{
-			final Type[] genericInterfaces = currentClass.getGenericInterfaces();
-			for (Class interfaze : getSubInterfaces(currentClass))
-			{
-				if (genericClass.isAssignableFrom(interfaze))
-				{
-					final Type[] genericSuperInterfaces = interfaze.getGenericInterfaces();
-					addInterfaces(genericClass, genericClasses, genericSuperInterfaces);
+		do {
+			final Type[] genericInterfaces = currentClass
+					.getGenericInterfaces();
+			for (Class interfaze : getSubInterfaces(currentClass)) {
+				if (genericClass.isAssignableFrom(interfaze)) {
+					final Type[] genericSuperInterfaces = interfaze
+							.getGenericInterfaces();
+					addInterfaces(genericClass, genericClasses,
+							genericSuperInterfaces);
 				}
 			}
 			addInterfaces(genericClass, genericClasses, genericInterfaces);
 			if (currentClass.getGenericSuperclass() != null
-				&& currentClass.getGenericSuperclass() instanceof ParameterizedType
-				&& genericClass.isAssignableFrom((Class) ((ParameterizedType) currentClass.getGenericSuperclass())
-					.getRawType()))
-			{
+					&& currentClass.getGenericSuperclass() instanceof ParameterizedType
+					&& genericClass
+							.isAssignableFrom((Class) ((ParameterizedType) currentClass
+									.getGenericSuperclass()).getRawType())) {
 				genericClasses.add(currentClass.getGenericSuperclass());
 			}
 			currentClass = currentClass.getSuperclass();
-		}
-		while (currentClass != null);
+		} while (currentClass != null);
 
 		int parameterIndex = 0;
-		for (TypeVariable parameterVariable : typeParameters)
-		{
+		for (TypeVariable parameterVariable : typeParameters) {
 			TypeVariable relevantVariable = parameterVariable;
 			int currentParameterIndex = parameterIndex;
 			parameterIndex++;
-			for (Type candidate : genericClasses)
-			{
-				if (candidate instanceof ParameterizedType)
-				{
+			for (Type candidate : genericClasses) {
+				if (candidate instanceof ParameterizedType) {
 					ParameterizedType parameterizedType = (ParameterizedType) candidate;
 
 					int variableIndex = 0;
-					for (TypeVariable variable : ((Class) parameterizedType.getRawType()).getTypeParameters())
-					{
+					for (TypeVariable variable : ((Class) parameterizedType
+							.getRawType()).getTypeParameters()) {
 
-						// FIXME this is wrong. type variable might be renamed in intermediate classes
-						if (variable.getName().equals(relevantVariable.getName()))
-						{
-							Type type = parameterizedType.getActualTypeArguments()[variableIndex];
-							if (type instanceof Class)
-							{
+						// FIXME this is wrong. type variable might be renamed
+						// in intermediate classes
+						if (variable.getName().equals(
+								relevantVariable.getName())) {
+							Type type = parameterizedType
+									.getActualTypeArguments()[variableIndex];
+							if (type instanceof Class) {
 								classes.add((Class) type);
-							}
-							else if (type instanceof GenericArrayType)
-							{
+							} else if (type instanceof GenericArrayType) {
 								GenericArrayType genericArrayType = (GenericArrayType) type;
-								Class<?> arrayType =
-									Array.newInstance((Class<?>) genericArrayType.getGenericComponentType(), 0).getClass();
+								Class<?> arrayType = Array
+										.newInstance(
+												(Class<?>) genericArrayType
+														.getGenericComponentType(),
+												0).getClass();
 								classes.add(arrayType);
-							}
-							else if (type instanceof TypeVariable)
-							{
+							} else if (type instanceof TypeVariable) {
 								relevantVariable = (TypeVariable) type;
-							}
-							else if (type instanceof ParameterizedType)
-							{
-								classes.add((Class) ((ParameterizedType) type).getRawType());
+							} else if (type instanceof ParameterizedType) {
+								classes.add((Class) ((ParameterizedType) type)
+										.getRawType());
 							}
 						}
 						variableIndex++;
@@ -146,25 +178,35 @@ public class ReflectionUtils
 		return classes.toArray(new Class[classes.size()]);
 	}
 
-	public static Collection<Class<?>> getAllInterfaces(Class<?> clazz)
-	{
+	/**
+	 * Gets the all interfaces.
+	 * 
+	 * @param clazz
+	 *            the clazz
+	 * @return the all interfaces
+	 */
+	public static Collection<Class<?>> getAllInterfaces(Class<?> clazz) {
 		Set<Class<?>> interfazes = new HashSet<Class<?>>();
 		interfazes.addAll(getSubInterfaces(clazz));
-		while (clazz.getSuperclass() != null)
-		{
+		while (clazz.getSuperclass() != null) {
 			clazz = clazz.getSuperclass();
 			interfazes.addAll(getSubInterfaces(clazz));
 		}
 		return interfazes;
 	}
 
-	public static Collection<Class<?>> getAllInterfacesAndClasses(Class<?> clazz)
-	{
+	/**
+	 * Gets the all interfaces and classes.
+	 * 
+	 * @param clazz
+	 *            the clazz
+	 * @return the all interfaces and classes
+	 */
+	public static Collection<Class<?>> getAllInterfacesAndClasses(Class<?> clazz) {
 		Set<Class<?>> interfazes = new HashSet<Class<?>>();
 		interfazes.addAll(getSubInterfaces(clazz));
 		interfazes.add(clazz);
-		while (clazz.getSuperclass() != null)
-		{
+		while (clazz.getSuperclass() != null) {
 			clazz = clazz.getSuperclass();
 			interfazes.add(clazz);
 			interfazes.addAll(getSubInterfaces(clazz));
@@ -172,73 +214,93 @@ public class ReflectionUtils
 		return interfazes;
 	}
 
+	/**
+	 * Gets the annotated annotation.
+	 * 
+	 * @param <A>
+	 *            the generic type
+	 * @param annotation
+	 *            the annotation
+	 * @param markerAnnotation
+	 *            the marker annotation
+	 * @return the annotated annotation
+	 */
 	@SuppressWarnings("unchecked")
-	public static <A extends Annotation> A getAnnotatedAnnotation(Annotation annotation, Class<A> markerAnnotation)
-	{
+	public static <A extends Annotation> A getAnnotatedAnnotation(
+			Annotation annotation, Class<A> markerAnnotation) {
 		final Class[] annotationClasses = annotation.getClass().getInterfaces();
-		for (Class annotationClass : annotationClasses)
-		{
+		for (Class annotationClass : annotationClasses) {
 
-			if (annotationClass.isAnnotationPresent(markerAnnotation))
-			{
+			if (annotationClass.isAnnotationPresent(markerAnnotation)) {
 				return (A) annotationClass.getAnnotation(markerAnnotation);
 			}
 		}
 		return null;
 	}
 
+	/**
+	 * Gets the annotated annotation.
+	 * 
+	 * @param <A>
+	 *            the generic type
+	 * @param annotationClass
+	 *            the annotation class
+	 * @param markerAnnotation
+	 *            the marker annotation
+	 * @return the annotated annotation
+	 */
 	@SuppressWarnings("unchecked")
-	public static <A extends Annotation> A getAnnotatedAnnotation(Class<Annotation> annotationClass,
-		Class<A> markerAnnotation)
-	{
-		if (annotationClass.isAnnotationPresent(markerAnnotation))
-		{
+	public static <A extends Annotation> A getAnnotatedAnnotation(
+			Class<Annotation> annotationClass, Class<A> markerAnnotation) {
+		if (annotationClass.isAnnotationPresent(markerAnnotation)) {
 			return annotationClass.getAnnotation(markerAnnotation);
 		}
 		return null;
 	}
 
+	/**
+	 * Gets the declared.
+	 * 
+	 * @param <T>
+	 *            the generic type
+	 * @param type
+	 *            the type
+	 * @param accessorType
+	 *            the accessor type
+	 * @param modifierFilters
+	 *            the modifier filters
+	 * @return the declared
+	 */
 	@SuppressWarnings("unchecked")
-	public static <T extends AccessibleObject & Member> Set<T> getDeclared(Class<?> type, Class<T> accessorType,
-		int... modifierFilters)
-	{
+	public static <T extends AccessibleObject & Member> Set<T> getDeclared(
+			Class<?> type, Class<T> accessorType, int... modifierFilters) {
 		int filter = 0;
-		for (int modifierFilter : modifierFilters)
-		{
+		for (int modifierFilter : modifierFilters) {
 			filter |= modifierFilter;
 		}
 
 		Set<T> result = new HashSet<T>();
-		for (Class<?> subtype = type; subtype != null && subtype != Object.class; subtype = subtype.getSuperclass())
-		{
+		for (Class<?> subtype = type; subtype != null
+				&& subtype != Object.class; subtype = subtype.getSuperclass()) {
 			T[] accessibles;
 
-			if (accessorType.equals(Field.class))
-			{
+			if (accessorType.equals(Field.class)) {
 				accessibles = (T[]) subtype.getDeclaredFields();
-			}
-			else if (accessorType.equals(Method.class))
-			{
+			} else if (accessorType.equals(Method.class)) {
 				accessibles = (T[]) subtype.getDeclaredMethods();
-			}
-			else if (accessorType.equals(Constructor.class))
-			{
+			} else if (accessorType.equals(Constructor.class)) {
 				accessibles = (T[]) subtype.getDeclaredConstructors();
-			}
-			else
-			{
-				throw new IllegalArgumentException("Unknown accessorType: " + accessorType.getName());
+			} else {
+				throw new IllegalArgumentException("Unknown accessorType: "
+						+ accessorType.getName());
 			}
 
-			for (T accessible : accessibles)
-			{
-				if ((accessible.getModifiers() & filter) != 0)
-				{
+			for (T accessible : accessibles) {
+				if ((accessible.getModifiers() & filter) != 0) {
 					continue;
 				}
 
-				if (!accessible.isAccessible())
-				{
+				if (!accessible.isAccessible()) {
 					accessible.setAccessible(true);
 				}
 				result.add(accessible);
@@ -247,59 +309,70 @@ public class ReflectionUtils
 		return result;
 	}
 
-	public static Object getField(Object value, String property)
-	{
+	/**
+	 * Gets the field.
+	 * 
+	 * @param value
+	 *            the value
+	 * @param property
+	 *            the property
+	 * @return the field
+	 */
+	public static Object getField(Object value, String property) {
 		Field field;
-		try
-		{
+		try {
 			field = value.getClass().getDeclaredField(property);
-			if (!field.isAccessible())
-			{
+			if (!field.isAccessible()) {
 				field.setAccessible(true);
 			}
 			return field.get(value);
-		}
-		catch (SecurityException e)
-		{
-			throw new IllegalArgumentException("cannot get property " + property + " of type "
-				+ value.getClass().getSimpleName(), e);
-		}
-		catch (NoSuchFieldException e)
-		{
-			throw new IllegalArgumentException("cannot get property " + property + " of type "
-				+ value.getClass().getSimpleName(), e);
-		}
-		catch (IllegalArgumentException e)
-		{
-			throw new IllegalArgumentException("cannot get property " + property + " of type "
-				+ value.getClass().getSimpleName(), e);
-		}
-		catch (IllegalAccessException e)
-		{
-			throw new IllegalArgumentException("cannot get property " + property + " of type "
-				+ value.getClass().getSimpleName(), e);
+		} catch (SecurityException e) {
+			throw new IllegalArgumentException(
+					"cannot get property " + property + " of type "
+							+ value.getClass().getSimpleName(), e);
+		} catch (NoSuchFieldException e) {
+			throw new IllegalArgumentException(
+					"cannot get property " + property + " of type "
+							+ value.getClass().getSimpleName(), e);
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException(
+					"cannot get property " + property + " of type "
+							+ value.getClass().getSimpleName(), e);
+		} catch (IllegalAccessException e) {
+			throw new IllegalArgumentException(
+					"cannot get property " + property + " of type "
+							+ value.getClass().getSimpleName(), e);
 		}
 	}
 
-	private static Collection<Class<?>> getSubInterfaces(Class<?> clazz)
-	{
+	/**
+	 * Gets the sub interfaces.
+	 * 
+	 * @param clazz
+	 *            the clazz
+	 * @return the sub interfaces
+	 */
+	private static Collection<Class<?>> getSubInterfaces(Class<?> clazz) {
 		Collection<Class<?>> interfaceSet = new HashSet<Class<?>>();
 		final Class<?>[] interfaces = clazz.getInterfaces();
-		for (Class<?> interfaze : interfaces)
-		{
+		for (Class<?> interfaze : interfaces) {
 			interfaceSet.addAll(getSubInterfaces(interfaze));
 			interfaceSet.add(interfaze);
 		}
 		return interfaceSet;
 	}
 
-	public static boolean isSerializable(Class<?> clazz)
-	{
-		while (Serializable.class.isAssignableFrom(clazz))
-		{
+	/**
+	 * Checks if is serializable.
+	 * 
+	 * @param clazz
+	 *            the clazz
+	 * @return true, if is serializable
+	 */
+	public static boolean isSerializable(Class<?> clazz) {
+		while (Serializable.class.isAssignableFrom(clazz)) {
 			clazz = clazz.getSuperclass();
-			if (clazz == Object.class)
-			{
+			if (clazz == Object.class) {
 				return true;
 			}
 		}

@@ -18,18 +18,60 @@ package org.atemsource.atem.api.attribute.primitive;
 import java.text.NumberFormat;
 import java.util.List;
 
+import org.atemsource.atem.api.type.PrimitiveType;
 
-public interface AmountInUnitsType<J, U extends Unit> extends PrimitiveType<J>
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface AmountInUnitsType.
+ * 
+ * @param <J>
+ *            the generic type
+ * @param <U>
+ *            the generic type
+ */
+public interface AmountInUnitsType<J, U extends Unit> extends PrimitiveType<J> {
 
+	/**
+	 * Creates the instance.
+	 * 
+	 * @param amount
+	 *            the amount
+	 * @param unitCode
+	 *            the unit code
+	 * @return the j
+	 */
 	J createInstance(Number amount, String unitCode);
 
+	/**
+	 * Gets the amount.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the amount
+	 */
 	Number getAmount(J value);
 
+	/**
+	 * Gets the format.
+	 * 
+	 * @return the format
+	 */
 	NumberFormat getFormat();
 
+	/**
+	 * Gets the unit.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the unit
+	 */
 	U getUnit(J value);
 
+	/**
+	 * Gets the units.
+	 * 
+	 * @return the units
+	 */
 	List<U> getUnits();
 
 }

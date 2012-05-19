@@ -15,7 +15,16 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute;
 
-public enum CollectionSortType
-{
-	SORTED, ORDERABLE, NONE;
+// TODO: Auto-generated Javadoc
+/**
+ * The Enum CollectionSortType.
+ */
+public enum CollectionSortType {
+
+	/** The SORTED. */
+	SORTED,
+	/** The ORDERABLE. */
+	ORDERABLE,
+	/** The NONE. */
+	NONE;
 }

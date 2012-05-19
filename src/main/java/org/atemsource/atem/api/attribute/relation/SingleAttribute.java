@@ -17,8 +17,12 @@ package org.atemsource.atem.api.attribute.relation;
 
 import org.atemsource.atem.api.attribute.Attribute;
 
-
-public interface SingleAttribute<J> extends Attribute<J, J>
-{
+/**
+ * The Interface SingleAttribute.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface SingleAttribute<J> extends Attribute<J, J> {
 
 }

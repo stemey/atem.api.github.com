@@ -15,7 +15,17 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-public interface DeletionService
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface DeletionService.
+ */
+public interface DeletionService {
+
+	/**
+	 * Delete.
+	 * 
+	 * @param entity
+	 *            the entity
+	 */
 	public void delete(Object entity);
 }

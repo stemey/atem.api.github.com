@@ -17,7 +17,9 @@ package org.atemsource.atem.api.attribute.primitive;
 
 import java.math.BigDecimal;
 
-public interface BigDecimalType extends NumberType<BigDecimal>
-{
+/**
+ * The Interface BigDecimalType.
+ */
+public interface BigDecimalType extends NumberType<BigDecimal> {
 
 }

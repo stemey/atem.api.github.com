@@ -17,9 +17,22 @@ package org.atemsource.atem.api.attribute.primitive;
 
 import java.util.Map;
 
+import org.atemsource.atem.api.type.PrimitiveType;
 
-public interface ChoiceType<J> extends PrimitiveType<J>
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface ChoiceType.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface ChoiceType<J> extends PrimitiveType<J> {
+
+	/**
+	 * Gets the options map.
+	 * 
+	 * @return the options map
+	 */
 	Map<String, J> getOptionsMap();
 
 }

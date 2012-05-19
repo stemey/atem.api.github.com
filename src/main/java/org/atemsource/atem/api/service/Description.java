@@ -15,13 +15,31 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-public interface Description
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface Description.
+ */
+public interface Description {
 
+	/**
+	 * Gets the description.
+	 * 
+	 * @return the description
+	 */
 	public String getDescription();
 
+	/**
+	 * Gets the image path.
+	 * 
+	 * @return the image path
+	 */
 	public String getImagePath();
 
+	/**
+	 * Gets the label.
+	 * 
+	 * @return the label
+	 */
 	public String getLabel();
 
 }

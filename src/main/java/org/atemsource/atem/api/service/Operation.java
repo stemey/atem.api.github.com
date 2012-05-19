@@ -15,8 +15,21 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-public enum Operation
-{
-	MODIFY, DELETE, CREATE, READ, PUBLISH;
+// TODO: Auto-generated Javadoc
+/**
+ * The Enum Operation.
+ */
+public enum Operation {
+
+	/** The MODIFY. */
+	MODIFY,
+	/** The DELETE. */
+	DELETE,
+	/** The CREATE. */
+	CREATE,
+	/** The READ. */
+	READ,
+	/** The PUBLISH. */
+	PUBLISH;
 
 }

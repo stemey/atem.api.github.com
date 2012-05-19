@@ -12,7 +12,12 @@ import java.util.List;
 import org.atemsource.atem.api.attribute.CollectionAttribute;
 import org.atemsource.atem.api.attribute.OrderableCollection;
 
-
-public interface ListAssociationAttribute<J> extends CollectionAttribute<J, List>, OrderableCollection<J, List>
-{
+/**
+ * The Interface ListAssociationAttribute.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface ListAssociationAttribute<J> extends
+		CollectionAttribute<J, List>, OrderableCollection<J, List> {
 }

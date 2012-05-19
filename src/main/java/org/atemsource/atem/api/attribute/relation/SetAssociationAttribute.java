@@ -9,7 +9,12 @@ package org.atemsource.atem.api.attribute.relation;
 
 import java.util.Set;
 
-
-public interface SetAssociationAttribute<J> extends CollectionAssociationAttribute<J, Set>
-{
+/**
+ * The Interface SetAssociationAttribute.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface SetAssociationAttribute<J> extends
+		CollectionAssociationAttribute<J, Set> {
 }

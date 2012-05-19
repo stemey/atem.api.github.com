@@ -17,37 +17,67 @@ package org.atemsource.atem.api.service;
 
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Result.
+ */
+public class Result {
 
-public class Result
-{
+	/** The entities. */
 	private List entities;
 
+	/** The count. */
 	private int count;
 
-	public Result(final List entities, final int count)
-	{
+	/**
+	 * Instantiates a new result.
+	 * 
+	 * @param entities
+	 *            the entities
+	 * @param count
+	 *            the count
+	 */
+	public Result(final List entities, final int count) {
 		super();
 		this.entities = entities;
 		this.count = count;
 	}
 
-	public int getCount()
-	{
+	/**
+	 * Gets the count.
+	 * 
+	 * @return the count
+	 */
+	public int getCount() {
 		return count;
 	}
 
-	public List getEntities()
-	{
+	/**
+	 * Gets the entities.
+	 * 
+	 * @return the entities
+	 */
+	public List getEntities() {
 		return entities;
 	}
 
-	public void setCount(final int count)
-	{
+	/**
+	 * Sets the count.
+	 * 
+	 * @param count
+	 *            the new count
+	 */
+	public void setCount(final int count) {
 		this.count = count;
 	}
 
-	public void setEntities(final List entities)
-	{
+	/**
+	 * Sets the entities.
+	 * 
+	 * @param entities
+	 *            the new entities
+	 */
+	public void setEntities(final List entities) {
 		this.entities = entities;
 	}
 }

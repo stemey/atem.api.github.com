@@ -15,15 +15,25 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-
 import java.util.List;
 
 import org.atemsource.atem.api.attribute.Attribute;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface AttributeValidationService.
+ */
+public interface AttributeValidationService {
 
-public interface AttributeValidationService
-{
-
+	/**
+	 * Validate.
+	 * 
+	 * @param attribute
+	 *            the attribute
+	 * @param value
+	 *            the value
+	 * @return the list
+	 */
 	List<EntityProblem> validate(Attribute attribute, Object value);
 
 }

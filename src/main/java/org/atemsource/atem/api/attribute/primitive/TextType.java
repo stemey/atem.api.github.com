@@ -15,7 +15,18 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface TextType extends PrimitiveType<String>
-{
+import org.atemsource.atem.api.type.PrimitiveType;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface TextType.
+ */
+public interface TextType extends PrimitiveType<String> {
+
+	/**
+	 * Gets the max length.
+	 * 
+	 * @return the max length
+	 */
 	public Integer getMaxLength();
 }

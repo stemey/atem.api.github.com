@@ -15,17 +15,72 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute;
 
-public interface OrderableCollection<J, R> extends CollectionAttribute<J, R>
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface OrderableCollection.
+ * 
+ * @param <J>
+ *            the generic type
+ * @param <R>
+ *            the generic type
+ */
+public interface OrderableCollection<J, R> extends CollectionAttribute<J, R> {
 
+	/**
+	 * Adds the element.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param index
+	 *            the index
+	 * @param value
+	 *            the value
+	 */
 	void addElement(Object entity, int index, J value);
 
+	/**
+	 * Gets the element.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param index
+	 *            the index
+	 * @return the element
+	 */
 	Object getElement(Object entity, int index);
 
+	/**
+	 * Gets the index.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param value
+	 *            the value
+	 * @return the index
+	 */
 	int getIndex(Object entity, J value);
 
+	/**
+	 * Move element.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param fromIndex
+	 *            the from index
+	 * @param toIndex
+	 *            the to index
+	 */
 	void moveElement(Object entity, int fromIndex, int toIndex);
 
+	/**
+	 * Removes the element.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param index
+	 *            the index
+	 * @return the object
+	 */
 	Object removeElement(Object entity, int index);
 
 }

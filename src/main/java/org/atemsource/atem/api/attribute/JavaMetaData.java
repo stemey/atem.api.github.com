@@ -18,13 +18,38 @@ package org.atemsource.atem.api.attribute;
 import java.lang.annotation.Annotation;
 import java.util.Collection;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface JavaMetaData.
+ */
+public interface JavaMetaData {
 
-public interface JavaMetaData
-{
+	/**
+	 * Gets the annotation.
+	 * 
+	 * @param <A>
+	 *            the generic type
+	 * @param annotationClass
+	 *            the annotation class
+	 * @return the annotation
+	 */
 	public <A extends Annotation> A getAnnotation(Class<A> annotationClass);
 
-	public Annotation getAnnotationAnnotatedBy(Class<? extends Annotation> annotationClass);
+	/**
+	 * Gets the annotation annotated by.
+	 * 
+	 * @param annotationClass
+	 *            the annotation class
+	 * @return the annotation annotated by
+	 */
+	public Annotation getAnnotationAnnotatedBy(
+			Class<? extends Annotation> annotationClass);
 
+	/**
+	 * Gets the annotations.
+	 * 
+	 * @return the annotations
+	 */
 	public Collection<? extends Annotation> getAnnotations();
 
 }

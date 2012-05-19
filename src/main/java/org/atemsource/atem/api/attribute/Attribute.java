@@ -11,13 +11,27 @@ import org.atemsource.atem.api.attribute.annotation.Cardinality;
 import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.api.type.Type;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface Attribute.
+ * 
+ * @param <J>
+ *            the generic type
+ * @param <R>
+ *            the generic type
+ */
+public interface Attribute<J, R> {
 
-public interface Attribute<J, R>
-{
+	/**
+	 * Gets the association type.
+	 * 
+	 * @return the association type
+	 */
 	public Class<R> getAssociationType();
 
 	/**
-	 * Returns the code (a unique identifier) of the attribute within the entity type.
+	 * Returns the code (a unique identifier) of the attribute within the entity
+	 * type.
 	 * 
 	 * @return The code.
 	 */
@@ -30,23 +44,84 @@ public interface Attribute<J, R>
 	 */
 	public EntityType getEntityType();
 
+	/**
+	 * Gets the return type.
+	 * 
+	 * @return the return type
+	 */
 	public Class<R> getReturnType();
 
+	/**
+	 * Gets the target cardinality.
+	 * 
+	 * @return the target cardinality
+	 */
 	public Cardinality getTargetCardinality();
 
+	/**
+	 * Gets the target type.
+	 * 
+	 * @return the target type
+	 */
 	public Type<J> getTargetType();
 
+	/**
+	 * Gets the target type.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the target type
+	 */
 	public Type<J> getTargetType(J value);
 
+	/**
+	 * Gets the value.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @return the value
+	 */
 	public R getValue(final Object entity);
 
+	/**
+	 * Checks if is composition.
+	 * 
+	 * @return true, if is composition
+	 */
 	public boolean isComposition();
 
+	/**
+	 * Checks if is equal.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param other
+	 *            the other
+	 * @return true, if is equal
+	 */
 	public boolean isEqual(Object entity, Object other);
 
+	/**
+	 * Checks if is required.
+	 * 
+	 * @return true, if is required
+	 */
 	public boolean isRequired();
 
+	/**
+	 * Checks if is writeable.
+	 * 
+	 * @return true, if is writeable
+	 */
 	public boolean isWriteable();
 
+	/**
+	 * Sets the value.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param value
+	 *            the value
+	 */
 	public void setValue(final Object entity, R value);
 }

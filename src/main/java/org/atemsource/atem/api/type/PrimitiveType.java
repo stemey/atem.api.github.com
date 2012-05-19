@@ -13,14 +13,52 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.impl.common.meta;
+package org.atemsource.atem.api.type;
 
-import java.lang.annotation.Annotation;
+import java.io.Serializable;
 
 
-public interface InitialzableByAnnotationBean<A extends Annotation>
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface PrimitiveType.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface PrimitiveType<J> extends Type<J> {
 
-	public void initialize(A a);
+	/**
+	 * Clone.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the j
+	 */
+	public J clone(J value);
+
+	/**
+	 * Deserialize.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the j
+	 */
+	public J deserialize(Serializable value);
+
+	/**
+	 * Checks if is nullable.
+	 * 
+	 * @return true, if is nullable
+	 */
+	public boolean isNullable();
+
+	/**
+	 * Serialize.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the serializable
+	 */
+	public Serializable serialize(J value);
 
 }

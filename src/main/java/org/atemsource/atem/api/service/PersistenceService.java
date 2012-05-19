@@ -15,9 +15,26 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-public interface PersistenceService
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface PersistenceService.
+ */
+public interface PersistenceService {
+
+	/**
+	 * Insert.
+	 * 
+	 * @param entity
+	 *            the entity
+	 */
 	public void insert(Object entity);
 
+	/**
+	 * Checks if is persistent.
+	 * 
+	 * @param intermediate
+	 *            the intermediate
+	 * @return true, if is persistent
+	 */
 	public boolean isPersistent(Object intermediate);
 }

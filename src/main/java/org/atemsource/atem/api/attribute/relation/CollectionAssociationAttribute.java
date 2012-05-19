@@ -17,8 +17,15 @@ package org.atemsource.atem.api.attribute.relation;
 
 import org.atemsource.atem.api.attribute.CollectionAttribute;
 
-
-public interface CollectionAssociationAttribute<J, R> extends CollectionAttribute<J, R>
-{
+/**
+ * The Interface CollectionAssociationAttribute.
+ * 
+ * @param <J>
+ *            the generic type
+ * @param <R>
+ *            the generic type
+ */
+public interface CollectionAssociationAttribute<J, R> extends
+		CollectionAttribute<J, R> {
 
 }

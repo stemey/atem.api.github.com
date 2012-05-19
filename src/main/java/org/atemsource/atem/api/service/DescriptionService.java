@@ -17,8 +17,20 @@ package org.atemsource.atem.api.service;
 
 import java.util.Locale;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface DescriptionService.
+ */
+public interface DescriptionService {
 
-public interface DescriptionService
-{
+	/**
+	 * Gets the description.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param locale
+	 *            the locale
+	 * @return the description
+	 */
 	public Description getDescription(Object entity, Locale locale);
 }

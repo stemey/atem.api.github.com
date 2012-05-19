@@ -15,7 +15,9 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface LongType extends NumberType<Long>
-{
+/**
+ * The Interface LongType.
+ */
+public interface LongType extends NumberType<Long> {
 
 }

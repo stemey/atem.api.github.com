@@ -15,7 +15,9 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface FloatType extends NumberType<Float>
-{
+/**
+ * The Interface FloatType.
+ */
+public interface FloatType extends NumberType<Float> {
 
 }

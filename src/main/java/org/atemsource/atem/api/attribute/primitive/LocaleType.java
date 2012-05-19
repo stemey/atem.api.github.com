@@ -17,8 +17,11 @@ package org.atemsource.atem.api.attribute.primitive;
 
 import java.util.Locale;
 
+import org.atemsource.atem.api.type.PrimitiveType;
 
-public interface LocaleType extends PrimitiveType<Locale>
-{
+/**
+ * The Interface LocaleType.
+ */
+public interface LocaleType extends PrimitiveType<Locale> {
 
 }

@@ -15,8 +15,13 @@
  ******************************************************************************/
 package org.atemsource.atem.spi;
 
-public enum Phase
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Enum Phase.
+ */
+public enum Phase {
+
+	/** The ENTIT y_ type s_ initialized. */
 	ENTITY_TYPES_INITIALIZED;
 
 }

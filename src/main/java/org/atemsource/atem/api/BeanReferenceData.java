@@ -16,63 +16,119 @@ import java.lang.annotation.Target;
 
 import org.atemsource.atem.api.infrastructure.meta.InitialzableByAnnotationBean;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BeanReferenceData.
+ */
+public class BeanReferenceData implements
+		InitialzableByAnnotationBean<BeanReferenceData.BeanReference> {
 
-public class BeanReferenceData implements InitialzableByAnnotationBean<BeanReferenceData.BeanReference>
-{
-
+	/** The bean name. */
 	private String beanName;
 
+	/** The bean class. */
 	private Class<?> beanClass;
 
+	/** The qualifier. */
 	private Class<? extends Annotation> qualifier;
 
-	public Class<?> getBeanClass()
-	{
+	/**
+	 * Gets the bean class.
+	 * 
+	 * @return the bean class
+	 */
+	public Class<?> getBeanClass() {
 		return beanClass;
 	}
 
-	public String getBeanName()
-	{
+	/**
+	 * Gets the bean name.
+	 * 
+	 * @return the bean name
+	 */
+	public String getBeanName() {
 		return beanName;
 	}
 
-	public Class<? extends Annotation> getQualifier()
-	{
+	/**
+	 * Gets the qualifier.
+	 * 
+	 * @return the qualifier
+	 */
+	public Class<? extends Annotation> getQualifier() {
 		return qualifier;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.atemsource.atem.api.infrastructure.meta.InitialzableByAnnotationBean
+	 * #initialize(java.lang.annotation.Annotation)
+	 */
 	@Override
-	public void initialize(BeanReference a)
-	{
+	public void initialize(BeanReference a) {
 		this.beanClass = a.beanClass();
 		this.beanName = a.beanName();
 		this.qualifier = a.qualifier();
 	}
 
-	public void setBeanClass(Class<?> beanClass)
-	{
+	/**
+	 * Sets the bean class.
+	 * 
+	 * @param beanClass
+	 *            the new bean class
+	 */
+	public void setBeanClass(Class<?> beanClass) {
 		this.beanClass = beanClass;
 	}
 
-	public void setBeanName(String beanName)
-	{
+	/**
+	 * Sets the bean name.
+	 * 
+	 * @param beanName
+	 *            the new bean name
+	 */
+	public void setBeanName(String beanName) {
 		this.beanName = beanName;
 	}
 
-	public void setQualifier(Class<? extends Annotation> qualifier)
-	{
+	/**
+	 * Sets the qualifier.
+	 * 
+	 * @param qualifier
+	 *            the new qualifier
+	 */
+	public void setQualifier(Class<? extends Annotation> qualifier) {
 		this.qualifier = qualifier;
 	}
 
+	/**
+	 * The Interface BeanReference.
+	 */
 	@Retention(RetentionPolicy.RUNTIME)
-	@Target({ANNOTATION_TYPE})
-	public @interface BeanReference
-	{
+	@Target({ ANNOTATION_TYPE })
+	public @interface BeanReference {
 
+		/**
+		 * Bean class.
+		 * 
+		 * @return the class
+		 */
 		Class<?> beanClass() default Object.class;
 
+		/**
+		 * Bean name.
+		 * 
+		 * @return the string
+		 */
 		String beanName() default "";
 
+		/**
+		 * Qualifier.
+		 * 
+		 * @return the class<? extends annotation>
+		 */
 		Class<? extends Annotation> qualifier() default Annotation.class;
 
 	}

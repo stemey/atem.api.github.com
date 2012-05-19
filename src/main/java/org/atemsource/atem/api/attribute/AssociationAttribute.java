@@ -17,11 +17,29 @@ package org.atemsource.atem.api.attribute;
 
 import org.atemsource.atem.api.type.EntityType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface AssociationAttribute.
+ * 
+ * @param <J>
+ *            the generic type
+ * @param <R>
+ *            the generic type
+ */
+public interface AssociationAttribute<J, R> extends Attribute<J, R> {
 
-public interface AssociationAttribute<J, R> extends Attribute<J, R>
-{
+	/**
+	 * Gets the incoming relation.
+	 * 
+	 * @return the incoming relation
+	 */
 	public AssociationAttribute<?, ?> getIncomingRelation();
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.atemsource.atem.api.attribute.Attribute#getTargetType()
+	 */
 	@Override
 	EntityType<J> getTargetType();
 

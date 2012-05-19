@@ -11,8 +11,20 @@ import java.io.Serializable;
 
 import org.atemsource.atem.api.type.EntityType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface FindByTypedIdService.
+ */
+public interface FindByTypedIdService {
 
-public interface FindByTypedIdService
-{
+	/**
+	 * Find by typed id.
+	 * 
+	 * @param entityType
+	 *            the entity type
+	 * @param id
+	 *            the id
+	 * @return the object
+	 */
 	public Object findByTypedId(EntityType<?> entityType, Serializable id);
 }

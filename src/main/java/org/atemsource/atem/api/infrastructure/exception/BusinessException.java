@@ -15,17 +15,32 @@
  ******************************************************************************/
 package org.atemsource.atem.api.infrastructure.exception;
 
-public class BusinessException extends Exception
-{
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BusinessException.
+ */
+public class BusinessException extends Exception {
 
-	public BusinessException(final String message)
-	{
+	/**
+	 * Instantiates a new business exception.
+	 * 
+	 * @param message
+	 *            the message
+	 */
+	public BusinessException(final String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public BusinessException(final String message, final Throwable cause)
-	{
+	/**
+	 * Instantiates a new business exception.
+	 * 
+	 * @param message
+	 *            the message
+	 * @param cause
+	 *            the cause
+	 */
+	public BusinessException(final String message, final Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}

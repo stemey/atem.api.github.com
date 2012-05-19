@@ -18,31 +18,112 @@ package org.atemsource.atem.api.type;
 import org.atemsource.atem.api.attribute.CollectionAttribute;
 import org.atemsource.atem.api.attribute.CollectionSortType;
 import org.atemsource.atem.api.attribute.MapAttribute;
-import org.atemsource.atem.api.attribute.primitive.PrimitiveType;
 import org.atemsource.atem.api.attribute.relation.SingleAttribute;
 
+// TODO: Auto-generated Javadoc
 /**
-* This builder allows to define an EntityType at run time. These EntityTypes are called dynamic.
-*
-*
-* @author Stefan Meyer
-*/
-public interface EntityTypeBuilder
-{
+ * This builder allows to define an EntityType at run time. These EntityTypes
+ * are called dynamic.
+ * 
+ * 
+ * @author Stefan Meyer
+ */
+public interface EntityTypeBuilder {
 
-	public <K, V, R> MapAttribute<K, V, R> addMapAssociationAttribute(String code, Type<K> keyType, Type<V> valueType);
+	/**
+	 * Adds the map association attribute.
+	 * 
+	 * @param <K>
+	 *            the key type
+	 * @param <V>
+	 *            the value type
+	 * @param <R>
+	 *            the generic type
+	 * @param code
+	 *            the code
+	 * @param keyType
+	 *            the key type
+	 * @param valueType
+	 *            the value type
+	 * @return the map attribute
+	 */
+	public <K, V, R> MapAttribute<K, V, R> addMapAssociationAttribute(
+			String code, Type<K> keyType, Type<V> valueType);
 
-	public <J, R> CollectionAttribute<J, R> addMultiAssociationAttribute(String code, Type<J> targetType,
-		CollectionSortType collectionSortType);
+	/**
+	 * Adds the multi association attribute.
+	 * 
+	 * @param <J>
+	 *            the generic type
+	 * @param <R>
+	 *            the generic type
+	 * @param code
+	 *            the code
+	 * @param targetType
+	 *            the target type
+	 * @param collectionSortType
+	 *            the collection sort type
+	 * @return the collection attribute
+	 */
+	public <J, R> CollectionAttribute<J, R> addMultiAssociationAttribute(
+			String code, Type<J> targetType,
+			CollectionSortType collectionSortType);
 
-	public <J> SingleAttribute<J> addPrimitiveAttribute(String code, PrimitiveType<J> type);
+	/**
+	 * Adds the primitive attribute.
+	 * 
+	 * @param <J>
+	 *            the generic type
+	 * @param code
+	 *            the code
+	 * @param type
+	 *            the type
+	 * @return the single attribute
+	 */
+	public <J> SingleAttribute<J> addPrimitiveAttribute(String code,
+			PrimitiveType<J> type);
 
-	public <J> SingleAttribute<J> addSingleAssociationAttribute(String code, EntityType<J> targetType);
+	/**
+	 * Adds the single association attribute.
+	 * 
+	 * @param <J>
+	 *            the generic type
+	 * @param code
+	 *            the code
+	 * @param targetType
+	 *            the target type
+	 * @return the single attribute
+	 */
+	public <J> SingleAttribute<J> addSingleAssociationAttribute(String code,
+			EntityType<J> targetType);
 
+	/**
+	 * Adds the single attribute.
+	 * 
+	 * @param <J>
+	 *            the generic type
+	 * @param code
+	 *            the code
+	 * @param type
+	 *            the type
+	 * @return the single attribute
+	 */
 	public <J> SingleAttribute<J> addSingleAttribute(String code, Type<J> type);
 
+	/**
+	 * Creates the entity type.
+	 * 
+	 * @return the entity type
+	 */
 	public EntityType<?> createEntityType();
 
+	/**
+	 * Sets the entity class.
+	 * 
+	 * @param entityClass
+	 *            the entity class
+	 * @return the entity type builder
+	 */
 	public EntityTypeBuilder setEntityClass(Class<?> entityClass);
 
 }

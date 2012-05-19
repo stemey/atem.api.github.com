@@ -15,7 +15,9 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.primitive;
 
-public interface EnumType extends ChoiceType<Enum>
-{
+/**
+ * The Interface EnumType.
+ */
+public interface EnumType extends ChoiceType<Enum> {
 
 }

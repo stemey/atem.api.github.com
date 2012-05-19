@@ -17,8 +17,18 @@ package org.atemsource.atem.api.service;
 
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface FindByTypeService.
+ */
+public interface FindByTypeService {
 
-public interface FindByTypeService
-{
+	/**
+	 * Gets the entities.
+	 * 
+	 * @param sorting
+	 *            the sorting
+	 * @return the entities
+	 */
 	public List getEntities(final Sorting sorting);
 }

@@ -7,10 +7,19 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute.annotation;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Enum Cardinality.
+ */
+public enum Cardinality {
 
-
-public enum Cardinality
-{
-	ZERO_TO_ONE, ONE, ZERO_TO_MANY, MANY;
+	/** The ZER o_ t o_ one. */
+	ZERO_TO_ONE,
+	/** The ONE. */
+	ONE,
+	/** The ZER o_ t o_ many. */
+	ZERO_TO_MANY,
+	/** The MANY. */
+	MANY;
 
 }

@@ -10,12 +10,33 @@ package org.atemsource.atem.api.attribute.relation;
 import org.atemsource.atem.api.attribute.CollectionAttribute;
 import org.atemsource.atem.api.attribute.OrderableCollection;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface ArrayAssociationAttribute.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface ArrayAssociationAttribute<J> extends
+		CollectionAttribute<J, J[]>, OrderableCollection<J, J[]> {
 
-public interface ArrayAssociationAttribute<J> extends CollectionAttribute<J, J[]>, OrderableCollection<J, J[]>
-{
-
+	/**
+	 * Gets the array.
+	 * 
+	 * @param entityd
+	 *            the entityd
+	 * @return the array
+	 */
 	public J[] getArray(final Object entityd);
 
+	/**
+	 * Sets the array.
+	 * 
+	 * @param object
+	 *            the object
+	 * @param associatedEntities
+	 *            the associated entities
+	 */
 	public void setArray(Object object, J[] associatedEntities);
 
 }

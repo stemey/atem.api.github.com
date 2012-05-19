@@ -15,15 +15,25 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-
 import java.io.Serializable;
 
 import org.atemsource.atem.api.type.EntityType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface IdentityService.
+ */
+public interface IdentityService {
 
-public interface IdentityService
-{
-
+	/**
+	 * Gets the id.
+	 * 
+	 * @param entityType
+	 *            the entity type
+	 * @param entity
+	 *            the entity
+	 * @return the id
+	 */
 	public Serializable getId(EntityType<?> entityType, Object entity);
 
 }

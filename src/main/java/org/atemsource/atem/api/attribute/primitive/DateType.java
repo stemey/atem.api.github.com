@@ -17,15 +17,38 @@ package org.atemsource.atem.api.attribute.primitive;
 
 import java.util.Date;
 
+import org.atemsource.atem.api.type.PrimitiveType;
 
-public interface DateType extends PrimitiveType<Object>
-{
-	public enum Precision
-	{
-		DATE, TIME, DATETIME;
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface DateType.
+ */
+public interface DateType extends PrimitiveType<Object> {
+
+	/**
+	 * The Enum Precision.
+	 */
+	public enum Precision {
+
+		/** The DATE. */
+		DATE,
+		/** The TIME. */
+		TIME,
+		/** The DATETIME. */
+		DATETIME;
 	}
 
+	/**
+	 * Gets the current date.
+	 * 
+	 * @return the current date
+	 */
 	public Date getCurrentDate();
 
+	/**
+	 * Gets the precision.
+	 * 
+	 * @return the precision
+	 */
 	public Precision getPrecision();
 }

@@ -15,10 +15,19 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface SingleAttributeQuery.
+ */
+public interface SingleAttributeQuery {
 
-
-public interface SingleAttributeQuery
-{
+	/**
+	 * Gets the result.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the result
+	 */
 	public Object getResult(Object value);
 
 }

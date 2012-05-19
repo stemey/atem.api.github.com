@@ -18,12 +18,34 @@ package org.atemsource.atem.api.service;
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.type.EntityType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface FindByAttributeService.
+ */
+public interface FindByAttributeService {
 
-public interface FindByAttributeService
-{
+	/**
+	 * Prepare query.
+	 * 
+	 * @param entityType
+	 *            the entity type
+	 * @param attribute
+	 *            the attribute
+	 * @return the attribute query
+	 */
+	public AttributeQuery prepareQuery(EntityType<?> entityType,
+			Attribute<?, ?> attribute);
 
-	public AttributeQuery prepareQuery(EntityType<?> entityType, Attribute<?, ?> attribute);
-
-	public SingleAttributeQuery prepareSingleQuery(EntityType<?> entityType, Attribute<?, ?> attribute);
+	/**
+	 * Prepare single query.
+	 * 
+	 * @param entityType
+	 *            the entity type
+	 * @param attribute
+	 *            the attribute
+	 * @return the single attribute query
+	 */
+	public SingleAttributeQuery prepareSingleQuery(EntityType<?> entityType,
+			Attribute<?, ?> attribute);
 
 }

@@ -22,31 +22,42 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
+// TODO: Auto-generated Javadoc
 /**
- * some of the information provided here may already be defined in a supporting framework (e.g. jpa).
+ * some of the information provided here may already be defined in a supporting
+ * framework (e.g. jpa).
  * 
  * @author stemey
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({METHOD, FIELD})
-public @interface Association
-{
+@Target({ METHOD, FIELD })
+public @interface Association {
+
+	/**
+	 * Composition.
+	 * 
+	 * @return true, if successful
+	 */
 	boolean composition() default false;
 
 	/**
 	 * might not exist. So create it for reflective access.
 	 * 
-	 * @return
+	 * @return the string
 	 */
 	String targetAttribute() default "";
 
 	/**
 	 * use this to model virtual attribute on the other end.
 	 * 
-	 * @return
+	 * @return the cardinality
 	 */
 	Cardinality targetCardinality() default Cardinality.ZERO_TO_MANY;
 
+	/**
+	 * Target type.
+	 * 
+	 * @return the class
+	 */
 	Class targetType();
 }

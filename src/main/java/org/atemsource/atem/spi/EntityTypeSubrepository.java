@@ -15,41 +15,127 @@
  ******************************************************************************/
 package org.atemsource.atem.spi;
 
-
 import java.util.Collection;
 
 import org.atemsource.atem.api.EntityTypeRepository;
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.type.EntityType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface EntityTypeSubrepository.
+ * 
+ * @param <J>
+ *            the generic type
+ */
+public interface EntityTypeSubrepository<J> {
 
-public interface EntityTypeSubrepository<J>
-{
+	/**
+	 * Adds the incoming association.
+	 * 
+	 * @param entityType
+	 *            the entity type
+	 * @param incomingRelation
+	 *            the incoming relation
+	 */
+	public void addIncomingAssociation(EntityType<J> entityType,
+			Attribute<?, ?> incomingRelation);
 
-	public void addIncomingAssociation(EntityType<J> entityType, Attribute<?, ?> incomingRelation);
+	/**
+	 * After first initialization.
+	 * 
+	 * @param entityTypeRepositoryImpl
+	 *            the entity type repository impl
+	 */
+	public void afterFirstInitialization(
+			EntityTypeRepository entityTypeRepositoryImpl);
 
-	public void afterFirstInitialization(EntityTypeRepository entityTypeRepositoryImpl);
-
+	/**
+	 * After initialization.
+	 */
 	public void afterInitialization();
 
+	/**
+	 * Contains.
+	 * 
+	 * @param entityType
+	 *            the entity type
+	 * @return true, if successful
+	 */
 	public boolean contains(EntityType<J> entityType);
 
+	/**
+	 * Gets the entity type.
+	 * 
+	 * @param clazz
+	 *            the clazz
+	 * @return the entity type
+	 */
 	public EntityType<J> getEntityType(Class clazz);
 
+	/**
+	 * Gets the entity type.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @return the entity type
+	 */
 	EntityType<J> getEntityType(Object entity);
 
+	/**
+	 * Gets the entity type.
+	 * 
+	 * @param typeCode
+	 *            the type code
+	 * @return the entity type
+	 */
 	public EntityType<J> getEntityType(String typeCode);
 
+	/**
+	 * Gets the entity type reference.
+	 * 
+	 * @param clazz
+	 *            the clazz
+	 * @return the entity type reference
+	 */
 	public EntityType<J> getEntityTypeReference(Class<J> clazz);
 
+	/**
+	 * Gets the entity type reference.
+	 * 
+	 * @param typeCode
+	 *            the type code
+	 * @return the entity type reference
+	 */
 	public EntityType<J> getEntityTypeReference(String typeCode);
 
+	/**
+	 * Gets the entity types.
+	 * 
+	 * @return the entity types
+	 */
 	public Collection<? extends EntityType<J>> getEntityTypes();
 
+	/**
+	 * Checks for entity type reference.
+	 * 
+	 * @param entityClass
+	 *            the entity class
+	 * @return true, if successful
+	 */
 	public boolean hasEntityTypeReference(Class entityClass);
 
+	/**
+	 * Initialize.
+	 * 
+	 * @param entityTypeCreationContext
+	 *            the entity type creation context
+	 */
 	public void initialize(EntityTypeCreationContext entityTypeCreationContext);
 
+	/**
+	 * Initialize incoming associations.
+	 */
 	public void initializeIncomingAssociations();
 
 }

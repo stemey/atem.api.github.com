@@ -15,7 +15,23 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
-public interface PagedInstancesService
-{
-	public Result getEntities(final int startIndex, final int count, final Sorting sorting);
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface PagedInstancesService.
+ */
+public interface PagedInstancesService {
+
+	/**
+	 * Gets the entities.
+	 * 
+	 * @param startIndex
+	 *            the start index
+	 * @param count
+	 *            the count
+	 * @param sorting
+	 *            the sorting
+	 * @return the entities
+	 */
+	public Result getEntities(final int startIndex, final int count,
+			final Sorting sorting);
 }

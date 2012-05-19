@@ -17,9 +17,19 @@ package org.atemsource.atem.api.service;
 
 import java.util.Collection;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface AttributeQuery.
+ */
+public interface AttributeQuery {
 
-public interface AttributeQuery
-{
+	/**
+	 * Gets the result.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the result
+	 */
 	public Collection<?> getResult(Object value);
 
 }

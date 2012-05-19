@@ -15,27 +15,47 @@
  ******************************************************************************/
 package org.atemsource.atem.spi;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PhaseEvent.
+ */
+public class PhaseEvent {
 
-public class PhaseEvent
-{
+	/** The context. */
 	private EntityTypeCreationContext context;
 
+	/** The phase. */
 	private Phase phase;
 
-	public PhaseEvent(EntityTypeCreationContext context, Phase phase)
-	{
+	/**
+	 * Instantiates a new phase event.
+	 * 
+	 * @param context
+	 *            the context
+	 * @param phase
+	 *            the phase
+	 */
+	public PhaseEvent(EntityTypeCreationContext context, Phase phase) {
 		super();
 		this.context = context;
 		this.phase = phase;
 	}
 
-	public EntityTypeCreationContext getContext()
-	{
+	/**
+	 * Gets the context.
+	 * 
+	 * @return the context
+	 */
+	public EntityTypeCreationContext getContext() {
 		return context;
 	}
 
-	public Phase getPhase()
-	{
+	/**
+	 * Gets the phase.
+	 * 
+	 * @return the phase
+	 */
+	public Phase getPhase() {
 		return phase;
 	}
 

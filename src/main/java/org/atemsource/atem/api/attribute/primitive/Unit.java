@@ -17,10 +17,25 @@ package org.atemsource.atem.api.attribute.primitive;
 
 import java.util.Locale;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface Unit.
+ */
+public interface Unit {
 
-public interface Unit
-{
+	/**
+	 * Gets the code.
+	 * 
+	 * @return the code
+	 */
 	public String getCode();
 
+	/**
+	 * Gets the label.
+	 * 
+	 * @param locale
+	 *            the locale
+	 * @return the label
+	 */
 	public String getLabel(Locale locale);
 }

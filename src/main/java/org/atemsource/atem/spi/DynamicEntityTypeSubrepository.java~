@@ -18,7 +18,7 @@ package org.atemsource.atem.spi;
 import org.atemsource.atem.api.type.EntityTypeBuilder;
 
 /**
- * DynamicEntityTypeSubrepository provide builders to create new EntityTypes.
+ * DynamicEntityTypeSubrepository provide builders to crete new EntityTypes.
  * 
  * @param <J>
  *            the generic type

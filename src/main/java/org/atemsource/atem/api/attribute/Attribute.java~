@@ -11,13 +11,14 @@ import org.atemsource.atem.api.attribute.annotation.Cardinality;
 import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.api.type.Type;
 
+// TODO: Auto-generated Javadoc
 /**
- * The Interface Attribute. An attribute is ike a field or java bean property. Is the type of the field a collection or array the type of the elements is described by the target type and the type of the elements holder is the association type.
+ * The Interface Attribute.
  * 
  * @param <J>
- *            the target type of the attribute.
+ *            the generic type
  * @param <R>
- *            the return type of the attribute.
+ *            the generic type
  */
 public interface Attribute<J, R> {
 
@@ -101,7 +102,7 @@ public interface Attribute<J, R> {
 	public boolean isEqual(Object entity, Object other);
 
 	/**
-	 * Checks if the attribute's value is required.
+	 * Checks if is required.
 	 * 
 	 * @return true, if is required
 	 */

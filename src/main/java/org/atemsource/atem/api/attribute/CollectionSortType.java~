@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.spi;
+package org.atemsource.atem.api.attribute;
 
-import org.atemsource.atem.api.type.EntityTypeBuilder;
-
+// TODO: Auto-generated Javadoc
 /**
- * DynamicEntityTypeSubrepository provide builders to create new EntityTypes.
- * 
- * @param <J>
- *            the generic type
+ * The Enum CollectionSortType.
  */
-public interface DynamicEntityTypeSubrepository<J> extends
-		EntityTypeSubrepository<J> {
+public enum CollectionSortType {
 
-	/**
-	 * Creates the builder.
-	 * 
-	 * @param code
-	 *            the code
-	 * @return the entity type builder
-	 */
-	public EntityTypeBuilder createBuilder(String code);
+	/** The SORTED. */
+	SORTED,
+	/** The ORDERABLE. */
+	ORDERABLE,
+	/** The NONE. */
+	NONE;
 }

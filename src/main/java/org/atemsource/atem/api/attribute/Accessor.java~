@@ -19,9 +19,9 @@ import java.lang.annotation.Annotation;
 import java.util.Collection;
 
 /**
- * Some EntityTypes and attribtues may implement this interface to give access to the underlying java elements metadata.
+ * The Interface Accessor is an abstraction for fields / java bean properties. It is internally used by attribute implementations.
  */
-public interface JavaMetaData {
+public interface Accessor {
 
 	/**
 	 * Gets the annotation.
@@ -32,7 +32,7 @@ public interface JavaMetaData {
 	 *            the annotation class
 	 * @return the annotation
 	 */
-	public <A extends Annotation> A getAnnotation(Class<A> annotationClass);
+	public <A extends Annotation> A getAnnotation(final Class<A> annotationClass);
 
 	/**
 	 * Gets the annotation annotated by.
@@ -50,5 +50,38 @@ public interface JavaMetaData {
 	 * @return the annotations
 	 */
 	public Collection<? extends Annotation> getAnnotations();
+
+	/**
+	 * Gets the value.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @return the value
+	 */
+	Object getValue(Object entity);
+
+	/**
+	 * Checks if is readable.
+	 * 
+	 * @return true, if is readable
+	 */
+	boolean isReadable();
+
+	/**
+	 * Checks if is writable.
+	 * 
+	 * @return true, if is writable
+	 */
+	boolean isWritable();
+
+	/**
+	 * Sets the value.
+	 * 
+	 * @param entity
+	 *            the entity
+	 * @param value
+	 *            the value
+	 */
+	void setValue(Object entity, Object value);
 
 }

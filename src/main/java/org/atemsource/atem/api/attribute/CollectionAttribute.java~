@@ -18,18 +18,19 @@ package org.atemsource.atem.api.attribute;
 import java.util.Collection;
 import java.util.Iterator;
 
+// TODO: Auto-generated Javadoc
 /**
- * Attributes that hold more than one value (collections and arrays).
+ * The Interface CollectionAttribute.
  * 
  * @param <J>
- *            the target type
+ *            the generic type
  * @param <R>
- *            the return type
+ *            the generic type
  */
 public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 
 	/**
-	 * Adds an element.
+	 * Adds the element.
 	 * 
 	 * @param entity
 	 *            the entity
@@ -39,7 +40,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public void addElement(Object entity, J element);
 
 	/**
-	 * Removes all elements.
+	 * Clear.
 	 * 
 	 * @param entity
 	 *            the entity
@@ -47,13 +48,13 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public void clear(Object entity);
 
 	/**
-	 * Check if the element is contained
+	 * Contains.
 	 * 
 	 * @param entity
 	 *            the entity
 	 * @param element
 	 *            the element
-	 * @return true, if the given element is contained in the collection.
+	 * @return true, if successful
 	 */
 	public boolean contains(Object entity, J element);
 
@@ -65,7 +66,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public CollectionSortType getCollectionSortType();
 
 	/**
-	 * Gets the elements as a collection. Changes to the collection may or may not affect the attrubute's value.
+	 * Gets the elements.
 	 * 
 	 * @param entity
 	 *            the entity
@@ -74,7 +75,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public Collection<J> getElements(Object entity);
 
 	/**
-	 * Gets the value of an empty collection. 
+	 * Gets the empty collection.
 	 * 
 	 * @param entity
 	 *            the entity
@@ -83,7 +84,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public R getEmptyCollection(Object entity);
 
 	/**
-	 * Gets the iterator to iterate over the elements.
+	 * Gets the iterator.
 	 * 
 	 * @param entity
 	 *            the entity
@@ -92,7 +93,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public Iterator<J> getIterator(Object entity);
 
 	/**
-	 * Gets the size of the collection.
+	 * Gets the size.
 	 * 
 	 * @param entity
 	 *            the entity
@@ -101,7 +102,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	public int getSize(Object entity);
 
 	/**
-	 * Removes the given element.
+	 * Removes the element.
 	 * 
 	 * @param entity
 	 *            the entity

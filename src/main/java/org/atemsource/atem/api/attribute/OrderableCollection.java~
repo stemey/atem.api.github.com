@@ -15,13 +15,14 @@
  ******************************************************************************/
 package org.atemsource.atem.api.attribute;
 
+// TODO: Auto-generated Javadoc
 /**
- * The Interface OrderableCollection offers maniulation of indexed collections.
+ * The Interface OrderableCollection.
  * 
  * @param <J>
- *            the target type
+ *            the generic type
  * @param <R>
- *            the return type
+ *            the generic type
  */
 public interface OrderableCollection<J, R> extends CollectionAttribute<J, R> {
 

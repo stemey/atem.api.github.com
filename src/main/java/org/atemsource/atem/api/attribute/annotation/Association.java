@@ -22,10 +22,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-// TODO: Auto-generated Javadoc
 /**
- * some of the information provided here may already be defined in a supporting
- * framework (e.g. jpa).
+ * For ATEM attributes to be able to provide the target type of collection attributes, the target type needs to be provided by extra meta data like this annotation.
  * 
  * @author stemey
  */
@@ -34,21 +32,21 @@ import java.lang.annotation.Target;
 public @interface Association {
 
 	/**
-	 * Composition.
+	 * This is a hint for utilities based on ATEM.
 	 * 
 	 * @return true, if successful
 	 */
 	boolean composition() default false;
 
 	/**
-	 * might not exist. So create it for reflective access.
+	 * If this is a unidirectional association you can set a name for the incoming assocaition attribute in the target type.
 	 * 
 	 * @return the string
 	 */
 	String targetAttribute() default "";
 
 	/**
-	 * use this to model virtual attribute on the other end.
+	 * Define the cardinality on the other side of the association.
 	 * 
 	 * @return the cardinality
 	 */

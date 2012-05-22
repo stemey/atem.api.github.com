@@ -21,15 +21,16 @@ import java.util.Set;
 
 import org.atemsource.atem.api.type.Type;
 
+// TODO: Auto-generated Javadoc
 /**
- * The Interface MapAttribute offers manipulation methods for maps.
+ * The Interface MapAttribute.
  * 
  * @param <K>
  *            the key type
  * @param <V>
- *            the target type
+ *            the value type
  * @param <R>
- *            the map type
+ *            the generic type
  */
 public interface MapAttribute<K, V, R> extends Attribute<V, R> {
 

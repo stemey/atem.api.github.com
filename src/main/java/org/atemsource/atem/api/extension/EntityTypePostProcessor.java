@@ -18,7 +18,6 @@ package org.atemsource.atem.api.extension;
 import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.spi.EntityTypeCreationContext;
 
-// TODO: Auto-generated Javadoc
 /**
  * When an EntityType is constructed this interface can be used to be notified.
  * Usually one processes annotations on the EntityType's java class and adds

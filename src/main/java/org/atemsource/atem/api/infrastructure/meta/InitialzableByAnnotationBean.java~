@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.spi;
+package org.atemsource.atem.api.infrastructure.meta;
 
-import org.atemsource.atem.api.type.EntityTypeBuilder;
+import java.lang.annotation.Annotation;
 
 /**
- * DynamicEntityTypeSubrepository provide builders to create new EntityTypes.
+ * This interface should be implemented by clsses that hold an annotations data. 
  * 
- * @param <J>
+ * @param <A>
  *            the generic type
  */
-public interface DynamicEntityTypeSubrepository<J> extends
-		EntityTypeSubrepository<J> {
+public interface InitialzableByAnnotationBean<A extends Annotation> {
 
 	/**
-	 * Creates the builder.
+	 * Initialize.
 	 * 
-	 * @param code
-	 *            the code
-	 * @return the entity type builder
+	 * @param a
+	 *            the a
 	 */
-	public EntityTypeBuilder createBuilder(String code);
+	public void initialize(A a);
+
 }

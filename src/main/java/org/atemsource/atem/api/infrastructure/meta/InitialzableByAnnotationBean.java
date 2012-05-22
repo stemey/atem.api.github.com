@@ -17,9 +17,9 @@ package org.atemsource.atem.api.infrastructure.meta;
 
 import java.lang.annotation.Annotation;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Interface InitialzableByAnnotationBean.
+* @Deprecated
+ * This interface should be implemented by clsses that hold an annotations data. 
  * 
  * @param <A>
  *            the generic type

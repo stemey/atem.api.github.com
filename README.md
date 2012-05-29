@@ -1,4 +1,4 @@
-atem.api.github.com
+Atem API
 ===================
 
-Project is still being set up. Website coming soon at ww.atemsource.org.
+See [Wiki](www.github.com/stemey/atem.api.github.com/WIki/Home) for documentation orgo to the [homepage](www.atemsource.org).

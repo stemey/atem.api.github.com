@@ -2,6 +2,7 @@ package org.atemsource.atem.api.extension;
 
 import org.atemsource.atem.api.attribute.relation.SingleAttribute;
 import org.atemsource.atem.api.type.EntityType;
+import org.atemsource.atem.spi.EntityTypeCreationContext;
 
 /**
  * MetaAttributeService olffers methods create a meta attribute. A meta attribute is a virtual attribute that attaches metadata to a holder type. An instance of metaAttributeService can be accessed from the dependency container. Usually tere will be more than one instance configured. They are providing different means of persisting the meta data association.
@@ -46,5 +47,7 @@ public interface MetaAttributeService {
 	 * @return the meta data
 	 */
 	Object getMetaData(String name, Object holder);
+
+	public void initialize(EntityTypeCreationContext ctx);
 
 }

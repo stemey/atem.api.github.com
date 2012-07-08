@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.atemsource.atem.api.type;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Set;
 
@@ -173,5 +174,6 @@ public interface EntityType<J> extends Type<J> {
 	 *         of, the type of a specified entity.
 	 */
 	public abstract boolean isAssignableFrom(final Object entity);
+
 
 }

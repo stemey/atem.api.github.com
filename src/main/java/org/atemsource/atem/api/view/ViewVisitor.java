@@ -13,18 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute;
+package org.atemsource.atem.api.view;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Enum CollectionSortType.
- */
-public enum CollectionSortType {
+import org.atemsource.atem.api.attribute.Attribute;
 
-	/** The SORTED. */
-	SORTED,
-	/** The ORDERABLE. */
-	ORDERABLE,
-	/** The NONE. */
-	NONE;
+
+public interface ViewVisitor<C>
+{
+
+	void visit(C context, Attribute attribute);
+
+	void visit(C context, Attribute attribute, AttributeVisitor<C> attributeVisitor);
+
 }

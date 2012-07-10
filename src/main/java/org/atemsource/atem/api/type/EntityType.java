@@ -13,6 +13,7 @@ import java.util.Set;
 
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.infrastructure.exception.TechnicalException;
+import org.atemsource.atem.api.view.View;
 
 
 // TODO: Auto-generated Javadoc
@@ -21,7 +22,7 @@ import org.atemsource.atem.api.infrastructure.exception.TechnicalException;
  * 
  * @param <J> the generic type
  */
-public interface EntityType<J> extends Type<J>
+public interface EntityType<J> extends Type<J>, View
 {
 
 	/**

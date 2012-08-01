@@ -70,7 +70,7 @@ public interface EntityTypeRepository {
 	 *            the generic type
 	 * @return all EntityTypes
 	 */
-	<J> Collection<EntityType<J>> getEntityTypes();
+	Collection<EntityType<?>> getEntityTypes();
 
 	/**
 	 * Get the Type for a class. Returns null if none was found.

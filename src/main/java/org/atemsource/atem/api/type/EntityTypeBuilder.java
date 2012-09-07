@@ -78,6 +78,8 @@ public interface EntityTypeBuilder
 	 */
 	public <J> SingleAttribute<J> addSingleAttribute(String code, Type<J> type);
 
+	public <J> SingleAttribute<J> addSingleAttribute(String code, Class<J> javaType);
+
 	/**
 	 * Creates the entity type.
 	 * 
@@ -94,5 +96,7 @@ public interface EntityTypeBuilder
 	public EntityTypeBuilder setEntityClass(Class<?> entityClass);
 
 	public void superType(EntityType<?> superType);
+
+	public void mixin(EntityType<?> mixinType);
 
 }

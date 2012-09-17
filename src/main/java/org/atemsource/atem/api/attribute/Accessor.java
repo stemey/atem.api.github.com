@@ -19,9 +19,11 @@ import java.lang.annotation.Annotation;
 import java.util.Collection;
 
 /**
- * The Interface Accessor is an abstraction for fields / java bean properties. It is internally used by attribute implementations.
+ * The Interface Accessor is an abstraction for fields / java bean properties.
+ * It is internally used by attribute implementations.
  */
 public interface Accessor {
+	<A extends Annotation> A getAnnotation(Class<A> annotationClass);
 
 	/**
 	 * Gets the value.

@@ -17,7 +17,6 @@ package org.atemsource.atem.api.attribute.primitive;
 
 import org.atemsource.atem.api.type.PrimitiveType;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Interface TextType.
  */

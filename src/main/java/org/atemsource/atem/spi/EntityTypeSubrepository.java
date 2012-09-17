@@ -12,6 +12,7 @@ import java.util.Collection;
 import org.atemsource.atem.api.EntityTypeRepository;
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.type.EntityType;
+import org.atemsource.atem.api.type.TypeFilter;
 
 
 /**
@@ -19,7 +20,7 @@ import org.atemsource.atem.api.type.EntityType;
  * 
  * @param <J> the generic type
  */
-public interface EntityTypeSubrepository<J>
+public interface EntityTypeSubrepository<J> extends TypeFilter<J>
 {
 
 	/**

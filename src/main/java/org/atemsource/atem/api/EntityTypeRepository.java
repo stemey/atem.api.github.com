@@ -20,6 +20,7 @@ import java.util.Collection;
 import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.api.type.PrimitiveType;
 import org.atemsource.atem.api.type.Type;
+import org.atemsource.atem.api.type.TypeFilter;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -28,7 +29,7 @@ import org.atemsource.atem.api.type.Type;
  * 
  * @author Stefan Meyer
  */
-public interface EntityTypeRepository {
+public interface EntityTypeRepository  {
 
 	/**
 	 * Get the EntityType for a class. Returns null if none was found.

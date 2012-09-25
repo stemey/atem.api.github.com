@@ -5,8 +5,15 @@ import org.atemsource.atem.api.type.EntityType;
 import org.atemsource.atem.spi.EntityTypeCreationContext;
 
 /**
- * MetaAttributeService olffers methods create a meta attribute. A meta attribute is a virtual attribute that attaches metadata to a holder type. An instance of metaAttributeService can be accessed from the dependency container. Usually tere will be more than one instance configured. They are providing different means of persisting the meta data association.
-* The metaattribute is not added to the ist of atributes of the holder. It can be retrieved as an incoming association on the holder type. The target type of that attribute will not necessarily be the meta data type. Rather there is an intermediate type holding references to both the meta data and the holder. 
+ * MetaAttributeService olffers methods create a meta attribute. A meta
+ * attribute is a virtual attribute that attaches metadata to a holder type. An
+ * instance of metaAttributeService can be accessed from the dependency
+ * container. Usually tere will be more than one instance configured. They are
+ * providing different means of persisting the meta data association. The
+ * metaattribute is not added to the ist of atributes of the holder. It can be
+ * retrieved as an incoming association on the holder type. The target type of
+ * that attribute will not necessarily be the meta data type. Rather there is an
+ * intermediate type holding references to both the meta data and the holder.
  */
 public interface MetaAttributeService {
 
@@ -26,28 +33,5 @@ public interface MetaAttributeService {
 	<J> SingleAttribute<J> addSingleMetaAttribute(String name,
 			EntityType<?> holderType, EntityType<J> metaDataType);
 
-	/**
-	 * Gets the meta attribute by its name.
-	 * 
-	 * @param <J>
-	 *            the metadata type
-	 * @param name
-	 *            the name of the metadata
-	 * @return the meta attribute
-	 */
-	<J> SingleAttribute<J> getMetaAttribute(String name);
-
-	/**
-	 * Gets the meta data from a holde
-	 * 
-	 * @param name
-	 *            the name of the metadata
-	 * @param holder
-	 *            the holder
-	 * @return the meta data
-	 */
-	Object getMetaData(String name, Object holder);
-
-	public void initialize(EntityTypeCreationContext ctx);
 
 }

@@ -13,42 +13,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
 
-import java.util.Date;
+import java.util.Currency;
+import java.util.List;
 
 import org.atemsource.atem.api.type.PrimitiveType;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Interface DateType.
+ * The Interface CurrencyAmountType.
+ * 
+ * @param <J>
+ *            the generic type
  */
-public interface DateType extends PrimitiveType<Object> {
+public interface CurrencyAmountType<J> extends PrimitiveType<J> {
 
 	/**
-	 * The Enum Precision.
-	 */
-	public enum Precision {
-
-		/** The DATE. */
-		DATE,
-		/** The TIME. */
-		TIME,
-		/** The DATETIME. */
-		DATETIME;
-	}
-
-	/**
-	 * Gets the current date.
+	 * Creates the instance.
 	 * 
-	 * @return the current date
+	 * @param amount
+	 *            the amount
+	 * @param currencyCode
+	 *            the currency code
+	 * @return the j
 	 */
-	public Date getCurrentDate();
+	J createInstance(Double amount, String currencyCode);
 
 	/**
-	 * Gets the precision.
+	 * Gets the amount as double.
 	 * 
-	 * @return the precision
+	 * @param value
+	 *            the value
+	 * @return the amount as double
 	 */
-	public Precision getPrecision();
+	Double getAmountAsDouble(J value);
+
+	/**
+	 * Gets the currencies set.
+	 * 
+	 * @return the currencies set
+	 */
+	List<Currency> getCurrenciesSet();
+
+	/**
+	 * Gets the currency code.
+	 * 
+	 * @param value
+	 *            the value
+	 * @return the currency code
+	 */
+	String getCurrencyCode(J value);
+
 }

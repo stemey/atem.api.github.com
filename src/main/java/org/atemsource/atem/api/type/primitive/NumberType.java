@@ -13,11 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
+
+import org.atemsource.atem.api.type.PrimitiveType;
 
 /**
- * The Interface EnumType.
+ * The Interface NumberType.
+ * 
+ * @param <J>
+ *            the generic type
  */
-public interface EnumType extends ChoiceType<Enum> {
+public interface NumberType<J extends Number> extends PrimitiveType<J> {
 
 }

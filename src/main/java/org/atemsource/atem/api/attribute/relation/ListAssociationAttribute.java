@@ -19,5 +19,5 @@ import org.atemsource.atem.api.attribute.OrderableCollection;
  *            the generic type
  */
 public interface ListAssociationAttribute<J> extends
-		CollectionAttribute<J, List>, OrderableCollection<J, List> {
+		OrderableCollection<J, List> {
 }

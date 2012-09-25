@@ -17,7 +17,7 @@ import org.atemsource.atem.api.attribute.OrderableCollection;
  *            the target type
  */
 public interface ArrayAssociationAttribute<J> extends
-		CollectionAttribute<J, J[]>, OrderableCollection<J, J[]> {
+		 OrderableCollection<J, J[]> {
 
 	/**
 	 * Gets the array.

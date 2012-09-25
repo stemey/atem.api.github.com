@@ -13,56 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
 
-import java.util.Currency;
-import java.util.List;
+import java.util.Map;
 
 import org.atemsource.atem.api.type.PrimitiveType;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Interface CurrencyAmountType.
+ * The Interface ChoiceType.
  * 
  * @param <J>
  *            the generic type
  */
-public interface CurrencyAmountType<J> extends PrimitiveType<J> {
+public interface ChoiceType<J> extends PrimitiveType<J> {
 
 	/**
-	 * Creates the instance.
+	 * Gets the options map.
 	 * 
-	 * @param amount
-	 *            the amount
-	 * @param currencyCode
-	 *            the currency code
-	 * @return the j
+	 * @return the options map
 	 */
-	J createInstance(Double amount, String currencyCode);
-
-	/**
-	 * Gets the amount as double.
-	 * 
-	 * @param value
-	 *            the value
-	 * @return the amount as double
-	 */
-	Double getAmountAsDouble(J value);
-
-	/**
-	 * Gets the currencies set.
-	 * 
-	 * @return the currencies set
-	 */
-	List<Currency> getCurrenciesSet();
-
-	/**
-	 * Gets the currency code.
-	 * 
-	 * @param value
-	 *            the value
-	 * @return the currency code
-	 */
-	String getCurrencyCode(J value);
+	Map<String, J> getOptionsMap();
 
 }

@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
+
+import java.util.Locale;
 
 import org.atemsource.atem.api.type.PrimitiveType;
 
 /**
- * The Interface BooleanType.
+ * The Interface LocaleType.
  */
-public interface BooleanType extends PrimitiveType<Boolean> {
+public interface LocaleType extends PrimitiveType<Locale> {
 
 }

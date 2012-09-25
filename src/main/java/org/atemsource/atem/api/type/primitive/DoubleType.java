@@ -13,16 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
-
-import org.atemsource.atem.api.type.PrimitiveType;
+package org.atemsource.atem.api.type.primitive;
 
 /**
- * The Interface NumberType.
- * 
- * @param <J>
- *            the generic type
+ * The Interface DoubleType.
  */
-public interface NumberType<J extends Number> extends PrimitiveType<J> {
+public interface DoubleType extends NumberType<Double> {
 
 }

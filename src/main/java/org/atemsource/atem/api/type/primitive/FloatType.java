@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
 
 /**
- * The Interface LongType.
+ * The Interface FloatType.
  */
-public interface LongType extends NumberType<Long> {
+public interface FloatType extends NumberType<Float> {
 
 }

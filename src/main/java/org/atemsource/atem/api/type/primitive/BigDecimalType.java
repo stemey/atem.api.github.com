@@ -13,29 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
 
-import java.util.Locale;
+import java.math.BigDecimal;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Interface Unit.
+ * The Interface BigDecimalType.
  */
-public interface Unit {
+public interface BigDecimalType extends NumberType<BigDecimal> {
 
-	/**
-	 * Gets the code.
-	 * 
-	 * @return the code
-	 */
-	public String getCode();
-
-	/**
-	 * Gets the label.
-	 * 
-	 * @param locale
-	 *            the locale
-	 * @return the label
-	 */
-	public String getLabel(Locale locale);
 }

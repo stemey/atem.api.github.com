@@ -13,19 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.relation;
+package org.atemsource.atem.api.type.primitive;
 
-import org.atemsource.atem.api.attribute.CollectionAttribute;
+import java.util.Date;
 
+import org.atemsource.atem.api.type.PrimitiveType;
+
+// TODO: Auto-generated Javadoc
 /**
- * The Interface CollectionAssociationAttribute.
- * 
- * @param <J>
- *            the generic type
- * @param <R>
- *            the generic type
+ * The Interface DateType.
  */
-public interface CollectionAssociationAttribute<J, R> extends
-		CollectionAttribute<J, R> {
+public interface DateType extends PrimitiveType<Object> {
 
+	/**
+	 * The Enum Precision.
+	 */
+	public enum Precision {
+
+		/** The DATE. */
+		DATE,
+		/** The TIME. */
+		TIME,
+		/** The DATETIME. */
+		DATETIME;
+	}
+
+	/**
+	 * Gets the current date.
+	 * 
+	 * @return the current date
+	 */
+	public Date getCurrentDate();
+
+	/**
+	 * Gets the precision.
+	 * 
+	 * @return the precision
+	 */
+	public Precision getPrecision();
 }

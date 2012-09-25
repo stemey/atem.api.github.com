@@ -13,26 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.atemsource.atem.api.attribute.primitive;
+package org.atemsource.atem.api.type.primitive;
 
-import java.util.Map;
-
-import org.atemsource.atem.api.type.PrimitiveType;
-
-// TODO: Auto-generated Javadoc
 /**
- * The Interface ChoiceType.
- * 
- * @param <J>
- *            the generic type
+ * The Interface LongType.
  */
-public interface ChoiceType<J> extends PrimitiveType<J> {
-
-	/**
-	 * Gets the options map.
-	 * 
-	 * @return the options map
-	 */
-	Map<String, J> getOptionsMap();
+public interface LongType extends NumberType<Long> {
 
 }

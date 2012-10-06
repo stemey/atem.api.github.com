@@ -73,6 +73,8 @@ public interface Attribute<J, R> {
 	 */
 	public Type<J> getTargetType(J value);
 
+	public Type<J>[] getValidTargetTypes();
+
 	/**
 	 * Gets the value.
 	 * 

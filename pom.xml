@@ -35,10 +35,6 @@
 			<name>Sonatype Nexus Snapshots</name>
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
-		<site>
-			<id>ftp-atemsource</id>
-			<url>ftp://ftp.atemsource.org:21/maven/site/api</url>
-		</site>
 	</distributionManagement>
 	<licenses>
 		<license>

@@ -137,4 +137,6 @@ public interface EntityTypeBuilder {
 
 	public void mixin(EntityType<?> mixinType);
 
+	public void setAbstract(boolean abstractType);
+
 }

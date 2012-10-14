@@ -161,12 +161,5 @@ public interface EntityType<J> extends Type<J>, View
 	 */
 	public abstract boolean isAbstractType();
 
-	/**
-	 * Returns whether this entity type is either the same as, or a super type of, the type of a specified entity.
-	 * 
-	 * @param entity The typed entity to compare to.
-	 * @return Whether this entity type is either the same as, or a super type of, the type of a specified entity.
-	 */
-	public abstract boolean isAssignableFrom(final Object entity);
 
 }

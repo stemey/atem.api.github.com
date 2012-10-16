@@ -110,4 +110,6 @@ public interface EntityTypeBuilder
 
 	public void superType(EntityType<?> superType);
 
+	public void setAbstract(boolean abstractType);
+
 }

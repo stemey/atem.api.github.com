@@ -7,7 +7,7 @@
  ******************************************************************************/
 package org.atemsource.atem.api.view;
 
-public class AttributeVisitor<C>
+public class AttributeVisitor<C> implements Visitor<C>
 {
 
 	private View view;
@@ -30,4 +30,6 @@ public class AttributeVisitor<C>
 	{
 		view.visit(visitor, context);
 	}
+	
+	
 }

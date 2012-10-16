@@ -15,9 +15,9 @@ public interface ViewVisitor<C>
 
 	void visit(C context, Attribute attribute);
 
-	void visit(C context, Attribute attribute, AttributeVisitor<C> attributeVisitor);
+	void visit(C context, Attribute attribute, Visitor<C> targetTypeVisitor);
 
-	void visitSubView(C context, View view);
+	boolean visitSubView(C context, View view);
 
-	void visitSuperView(C context, View view);
+	boolean visitSuperView(C context, View view);
 }

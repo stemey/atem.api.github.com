@@ -58,5 +58,7 @@ public interface Type<J> {
 	 * @return rue if the values are equal
 	 */
 	public boolean isEqual(J a, J b);
+	
+	public boolean isInstance(Object value);
 
 }

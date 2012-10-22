@@ -35,6 +35,10 @@
 			<name>Sonatype Nexus Snapshots</name>
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
+		<site>
+			<id>ftp-atemsource</id>
+			<url>ftp://ftp.atemsource.org:21/maven/api/site</url>
+		</site>
 	</distributionManagement>
 	<licenses>
 		<license>
@@ -56,7 +60,7 @@
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-ftp</artifactId>
-				<version>1.0-beta-7</version>
+				<version>2.2</version>
 			</extension>
 		</extensions>
 		<defaultGoal>install</defaultGoal>

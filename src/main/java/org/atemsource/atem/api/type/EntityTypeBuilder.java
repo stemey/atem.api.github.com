@@ -39,6 +39,8 @@ public interface EntityTypeBuilder
 	public <K, V, R> MapAttribute<K, V, R> addMapAssociationAttribute(String code, Type<K> keyType, Type<V> valueType,
 		boolean sorted, Type[] validTypes);
 
+	
+	public EntityType<?> getReference();
 	/**
 	 * Adds the multi association attribute.
 	 * 

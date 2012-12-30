@@ -116,6 +116,8 @@ public interface Attribute<J, R> {
 	 */
 	public boolean isWriteable();
 
+	public boolean isDerived();
+
 	/**
 	 * Sets the value.
 	 * 

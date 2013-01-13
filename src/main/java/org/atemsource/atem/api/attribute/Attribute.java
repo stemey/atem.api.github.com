@@ -27,6 +27,11 @@ public interface Attribute<J, R> {
 	 * @return the association type
 	 */
 	public Class<R> getAssociationType();
+	
+	public void setMetaValue(String metaAttributeCode,Object value);
+	public Object getMetaValue(String metaAttributeCode);
+	public Attribute<?,?> getMetaAttribute(String metaAttributeCode);
+	EntityType<? extends Attribute<?, ?>> getMetaType();
 
 	/**
 	 * Returns the code (a unique identifier) of the attribute within the entity

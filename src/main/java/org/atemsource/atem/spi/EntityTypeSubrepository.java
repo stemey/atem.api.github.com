@@ -104,6 +104,7 @@ public interface EntityTypeSubrepository<J> extends TypeFilter<J>
 	 * 
 	 * @return the entity types
 	 */
+	@Override
 	public Collection<? extends EntityType<J>> getEntityTypes();
 
 	/**
@@ -125,5 +126,7 @@ public interface EntityTypeSubrepository<J> extends TypeFilter<J>
 	 * Initialize incoming associations.
 	 */
 	public void initializeIncomingAssociations();
+
+	public void performLazyRepositoryInit(EntityTypeCreationContext ctx);
 
 }

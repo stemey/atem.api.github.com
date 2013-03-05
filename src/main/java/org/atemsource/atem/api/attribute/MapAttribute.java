@@ -10,6 +10,7 @@ package org.atemsource.atem.api.attribute;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
 import org.atemsource.atem.api.type.Type;
 
 
@@ -29,6 +30,8 @@ public interface MapAttribute<K, V, R> extends Attribute<V, R>
 	 * @param entity the entity
 	 */
 	public void clear(Object entity);
+
+	public boolean containsKey(Object entity, K key);
 
 	/**
 	 * Contains value.

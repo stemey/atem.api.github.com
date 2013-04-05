@@ -23,6 +23,8 @@ import org.atemsource.atem.api.view.View;
  */
 public interface EntityType<J> extends Type<J>, View
 {
+	
+	public EntityType<EntityType<J>> getMetaType();
 
 	/**
 	 * Creates the array.

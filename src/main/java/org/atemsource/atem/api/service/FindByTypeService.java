@@ -17,6 +17,8 @@ package org.atemsource.atem.api.service;
 
 import java.util.List;
 
+import org.atemsource.atem.api.type.EntityType;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Interface FindByTypeService.
@@ -30,5 +32,5 @@ public interface FindByTypeService {
 	 *            the sorting
 	 * @return the entities
 	 */
-	public List getEntities(final Sorting sorting);
+	public <E> List<E> getEntities(EntityType<E> entityType);
 }

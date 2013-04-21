@@ -34,7 +34,7 @@ public interface IdentityService {
 	 *            the entity
 	 * @return the id
 	 */
-	public Serializable getId(EntityType<?> entityType, Object entity);
+	public <E> Serializable getId(EntityType<E> entityType, E entity);
 
 
 }

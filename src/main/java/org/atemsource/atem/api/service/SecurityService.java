@@ -16,6 +16,7 @@
 package org.atemsource.atem.api.service;
 
 import org.atemsource.atem.api.attribute.Attribute;
+import org.atemsource.atem.api.type.EntityType;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -30,61 +31,25 @@ public interface SecurityService {
 	 *            the attribute
 	 * @return true, if successful
 	 */
-	boolean hasAttributeModificationPermission(Attribute attribute);
+	boolean hasAttributePermission(Attribute<?,?> attribute, Operation operation);
 
 	/**
-	 * Checks for attribute reading permission.
+	 * Checks for attribute modification permission.
 	 * 
 	 * @param attribute
 	 *            the attribute
 	 * @return true, if successful
 	 */
-	boolean hasAttributeReadingPermission(Attribute attribute);
+	boolean hasTypePermission(EntityType<?> entityType, Operation operation);
 
 	/**
-	 * Checks for creation permission.
+	 * Checks for attribute modification permission.
 	 * 
+	 * @param attribute
+	 *            the attribute
 	 * @return true, if successful
 	 */
-	boolean hasCreationPermission();
+	<E> boolean  hasInstancePermission(EntityType<E> entityType, E entity,Operation operation);
 
-	/**
-	 * Checks for deletion permission.
-	 * 
-	 * @return true, if successful
-	 */
-	boolean hasDeletionPermission();
-
-	/**
-	 * Checks for deletion permission.
-	 * 
-	 * @param entity
-	 *            the entity
-	 * @return true, if successful
-	 */
-	boolean hasDeletionPermission(Object entity);
-
-	/**
-	 * Checks for type modification permission.
-	 * 
-	 * @return true, if successful
-	 */
-	boolean hasTypeModificationPermission();
-
-	/**
-	 * Checks for type permission.
-	 * 
-	 * @param operation
-	 *            the operation
-	 * @return true, if successful
-	 */
-	boolean hasTypePermission(Operation operation);
-
-	/**
-	 * Checks for type reading permission.
-	 * 
-	 * @return true, if successful
-	 */
-	boolean hasTypeReadingPermission();
 
 }

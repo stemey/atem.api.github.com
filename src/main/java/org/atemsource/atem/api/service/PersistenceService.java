@@ -15,6 +15,8 @@
  ******************************************************************************/
 package org.atemsource.atem.api.service;
 
+import java.io.Serializable;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Interface PersistenceService.
@@ -27,7 +29,7 @@ public interface PersistenceService {
 	 * @param entity
 	 *            the entity
 	 */
-	public void insert(Object entity);
+	public Serializable insert(Object entity);
 
 	/**
 	 * Checks if is persistent.
@@ -36,5 +38,5 @@ public interface PersistenceService {
 	 *            the intermediate
 	 * @return true, if is persistent
 	 */
-	public boolean isPersistent(Object intermediate);
+	public boolean isPersistent(Object entity);
 }

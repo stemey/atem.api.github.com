@@ -29,7 +29,5 @@ public enum Operation {
 	CREATE,
 	/** The READ. */
 	READ,
-	/** The PUBLISH. */
-	PUBLISH;
 
 }

@@ -7,9 +7,16 @@
  ******************************************************************************/
 package org.atemsource.atem.api.view;
 
+import java.util.Iterator;
+
+import org.atemsource.atem.api.attribute.Attribute;
+
 public interface View
 {
 
-	public <C> void visit(ViewVisitor<C> visitor, C context);
+	public Iterator<AttributeView> attributes();
+	public View getSuperView();
+	public Iterator<? extends View> subviews();
+	
 
 }

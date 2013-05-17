@@ -17,6 +17,8 @@ package org.atemsource.atem.api.service;
 
 import java.io.Serializable;
 
+import org.atemsource.atem.api.type.EntityType;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Interface DeletionService.
@@ -29,5 +31,5 @@ public interface DeletionService {
 	 * @param entity
 	 *            the entity
 	 */
-	public void delete(Serializable id);
+	public void delete(EntityType<?> entityType,Serializable id);
 }

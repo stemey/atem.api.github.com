@@ -93,7 +93,7 @@ public interface EntityType<J> extends Type<J>, View
 	 * @param sourceTypeCode the source type code
 	 * @return the incoming association
 	 */
-	public Attribute getIncomingAssociation(String sourceTypeCode);
+	public IncomingRelation getIncomingAssociation(String sourceTypeCode);
 
 	/**
 	 * Gets the incoming association.
@@ -102,8 +102,9 @@ public interface EntityType<J> extends Type<J>, View
 	 * @param attributeCode the attribute code
 	 * @return the incoming association
 	 */
-	public Attribute getIncomingAssociation(String sourceTypeCode, String attributeCode);
+	public IncomingRelation getIncomingAssociation(String sourceTypeCode, String attributeCode);
 
+	public Collection<IncomingRelation> getIncomingAssociations();
 	/**
 	 * Returns an attributes of this entity type by its code.
 	 * 

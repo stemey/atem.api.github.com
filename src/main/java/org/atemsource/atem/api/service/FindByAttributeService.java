@@ -37,7 +37,8 @@ public interface FindByAttributeService {
 			Attribute<?, ?> attribute);
 
 	/**
-	 * Prepare single query.
+	 * Prepare single query. Result of the query is the entity of the given type
+	 * who is referenced by the given attribute on another entity,
 	 * 
 	 * @param entityType
 	 *            the entity type

@@ -32,6 +32,7 @@ public interface Attribute<J, R> {
 	public Object getMetaValue(String metaAttributeCode);
 	public Attribute<?,?> getMetaAttribute(String metaAttributeCode);
 	EntityType<? extends Attribute<?, ?>> getMetaType();
+	
 
 	/**
 	 * Returns the code (a unique identifier) of the attribute within the entity

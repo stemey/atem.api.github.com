@@ -22,11 +22,12 @@ package org.atemsource.atem.api.service;
 public interface SingleAttributeQuery {
 
 	/**
-	 * Gets the result.
+	 * Gets the entity that is referenced by the given value.
 	 * 
 	 * @param value
-	 *            the value
-	 * @return the result
+	 *            the value of the entity that references the result via the
+	 *            attribute.
+	 * @return the result the referenced entity
 	 */
 	public Object getResult(Object value);
 

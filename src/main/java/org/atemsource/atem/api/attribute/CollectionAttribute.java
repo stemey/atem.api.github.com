@@ -80,7 +80,7 @@ public interface CollectionAttribute<J, R> extends Attribute<J, R> {
 	 *            the entity
 	 * @return the empty collection
 	 */
-	public R getEmptyCollection(Object entity);
+	//public R getEmptyCollection(Object entity);
 
 	/**
 	 * Gets the iterator to iterate over the elements.

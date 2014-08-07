@@ -379,4 +379,14 @@ public class ReflectionUtils {
 		return false;
 	}
 
+	public static void setField(Object target, String name, Object value) {
+		try {
+			Field field = target.getClass().getDeclaredField(name);
+			field.setAccessible(true);
+			field.set(target, value);
+		} catch (Exception e) {
+			throw new RuntimeException("cannot set field "+name,e);
+		} 
+	}
+
 }

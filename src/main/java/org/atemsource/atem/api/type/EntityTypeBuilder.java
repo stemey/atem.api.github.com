@@ -76,6 +76,7 @@ public interface EntityTypeBuilder
 	 * @return the single attribute
 	 */
 	public <J> SingleAttribute<J> addSingleAssociationAttribute(String code, EntityType<J> targetType);
+	public <J> SingleAssociationAttributeBuilder<J> addSingleAssociationAttribute(String code);
 
 	public <J> SingleAttribute<J> addSingleAttribute(String code, Class<J> javaType);
 
@@ -113,5 +114,6 @@ public interface EntityTypeBuilder
 	public void superType(EntityType<?> superType);
 
 	public void setAbstract(boolean abstractType);
+
 
 }

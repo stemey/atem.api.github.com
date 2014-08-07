@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.atemsource.atem.spi;
 
+import org.atemsource.atem.api.infrastructure.exception.BusinessException;
 import org.atemsource.atem.api.type.EntityTypeBuilder;
 
 
@@ -25,4 +26,16 @@ public interface DynamicEntityTypeSubrepository<J> extends EntityTypeSubreposito
 	 * @return the entity type builder
 	 */
 	public EntityTypeBuilder createBuilder(String code);
+
+	/**
+	 * Creates the builder to replace the existing type.
+	 * 
+	 * @param code the code
+	 * @return the entity type builder
+	 */
+	public EntityTypeBuilder replaceBuilder(String code);
+
+	public void clear();
+
+	public void remove(String typeCode);
 }

@@ -42,5 +42,8 @@ public interface AssociationAttribute<J, R> extends Attribute<J, R> {
 	 */
 	@Override
 	EntityType<J> getTargetType();
+	
+	public <T extends J> T createTarget(EntityType<T> targetType, Object parent);
+
 
 }

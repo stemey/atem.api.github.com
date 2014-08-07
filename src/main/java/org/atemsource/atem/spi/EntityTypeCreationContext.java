@@ -9,6 +9,7 @@ package org.atemsource.atem.spi;
 
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.type.EntityType;
+import org.atemsource.atem.api.type.IncomingRelation;
 import org.atemsource.atem.api.type.Type;
 
 
@@ -25,7 +26,7 @@ public interface EntityTypeCreationContext
 	 * @param entityType the entity type
 	 * @param incomingRelation the incoming relation
 	 */
-	public void addIncomingAssociation(EntityType entityType, Attribute<?, ?> incomingRelation);
+	public void addIncomingAssociation(EntityType entityType, IncomingRelation<?, ?> incomingRelation);
 
 	/**
 	 * Adds the listener.

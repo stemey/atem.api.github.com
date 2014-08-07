@@ -12,6 +12,7 @@ import java.util.Collection;
 import org.atemsource.atem.api.EntityTypeRepository;
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.type.EntityType;
+import org.atemsource.atem.api.type.IncomingRelation;
 import org.atemsource.atem.api.type.TypeFilter;
 
 
@@ -29,7 +30,7 @@ public interface EntityTypeSubrepository<J> extends TypeFilter<J>
 	 * @param entityType the entity type
 	 * @param incomingRelation the incoming relation
 	 */
-	public void addIncomingAssociation(EntityType<J> entityType, Attribute<?, ?> incomingRelation);
+	public void addIncomingAssociation(EntityType<J> entityType, IncomingRelation<?, ?> incomingRelation);
 
 	/**
 	 * Adds the meta attribute

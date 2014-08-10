@@ -23,6 +23,10 @@ import org.atemsource.atem.api.type.TypeFilter;
  */
 public interface EntityTypeSubrepository<J> extends TypeFilter<J>
 {
+	
+	public String getId();
+	
+	public <T> T getService(Class<T> serviceClass);
 
 	/**
 	 * Adds the incoming association.

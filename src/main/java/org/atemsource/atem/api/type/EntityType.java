@@ -10,9 +10,12 @@ package org.atemsource.atem.api.type;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+
+import org.atemsource.atem.api.EntityTypeRepository;
 import org.atemsource.atem.api.attribute.Attribute;
 import org.atemsource.atem.api.infrastructure.exception.TechnicalException;
 import org.atemsource.atem.api.view.View;
+import org.atemsource.atem.spi.EntityTypeSubrepository;
 
 
 // TODO: Auto-generated Javadoc
@@ -23,6 +26,8 @@ import org.atemsource.atem.api.view.View;
  */
 public interface EntityType<J> extends Type<J>, View
 {
+	
+	public EntityTypeSubrepository<J> getRepository();
 	
 	public EntityType<EntityType<J>> getMetaType();
 

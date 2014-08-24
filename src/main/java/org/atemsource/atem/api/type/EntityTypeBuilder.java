@@ -77,6 +77,7 @@ public interface EntityTypeBuilder
 	 */
 	public <J> SingleAttribute<J> addSingleAssociationAttribute(String code, EntityType<J> targetType);
 	public <J> SingleAssociationAttributeBuilder<J> addSingleAssociationAttribute(String code);
+	public <R,J> MultiAssociationAttributeBuilder<R,J> addMultiAssociationAttribute(String code);
 
 	public <J> SingleAttribute<J> addSingleAttribute(String code, Class<J> javaType);
 
